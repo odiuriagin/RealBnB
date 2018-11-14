@@ -6,23 +6,22 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
-      password: ""
+      email: "Email address",
+      password: "Password"
     };
-    this.handleSubmit.bind(this);
-    this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
  handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(user).then(this.props.closeModal);
  }
 
  handleChange(field) {
-   return (e) => {
-     this.setState({[field]: e.target.value});
-   }
+   return (e) => this.setState({
+     [field]: e.target.value
+   });
  }
 
  render() {
@@ -33,18 +32,19 @@ class SessionForm extends React.Component {
    let name = <div></div>;
 
    if (this.props.formType === "Sign Up") {
-     name = <input type="text" onChange={this.handleChange("name")} value={"Full Name"}/>;
+     name = <input type="text" onChange={this.handleChange("name")} value={this.state.name}/>;
    }
 
    return (
-     <div>
+     <div className="splash-form-container">
+       <div onClick={this.props.closeModal} className="close-x">X</div>
        <div>
          <ul>{errors}</ul>
        </div>
-       <form onSubmit={this.handleSubmit}>
+       <form className="splash-form" onSubmit={this.handleSubmit}>
          {name}
-         <input type="text" onChange={this.handleChange("email")} value={"Email"}/>
-         <input type="password" onChange={this.handleChange("password")} value={"Password"}/>
+         <input type="text" onChange={this.handleChange("email")} value={this.state.email}/>
+         <input type="password" onChange={this.handleChange("password")} value={this.state.password}/>
          <input type="submit" value={this.props.formType} />
        </form>
      </div>

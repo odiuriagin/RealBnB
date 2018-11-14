@@ -1,0 +1,16 @@
+.splash-form-container {
+  width: 500px;
+  height: 350px;
+  background-color: white;
+  padding: 20px;
+}
+
+.splash-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.splash-form input {
+  margin-bottom: 20px;
+  height: 30px;
+}
