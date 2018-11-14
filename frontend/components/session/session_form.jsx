@@ -1,13 +1,14 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 
 class SessionForm extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      email: "Email address",
-      password: "Password"
+      name: "",
+      email: "",
+      password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -32,20 +33,20 @@ class SessionForm extends React.Component {
    let name = <div></div>;
 
    if (this.props.formType === "Sign Up") {
-     name = <input type="text" onChange={this.handleChange("name")} value={this.state.name}/>;
+     name = <input type="text" placeholder="Name" onChange={this.handleChange("name")} value={this.state.name}/>;
    }
 
    return (
      <div className="splash-form-container">
-       <div onClick={this.props.closeModal} className="close-x">X</div>
+       <a onClick={this.props.closeModal} className="close-icon"><img src={window.close_icon}/></a>
        <div>
          <ul>{errors}</ul>
        </div>
        <form className="splash-form" onSubmit={this.handleSubmit}>
          {name}
-         <input type="text" onChange={this.handleChange("email")} value={this.state.email}/>
-         <input type="password" onChange={this.handleChange("password")} value={this.state.password}/>
-         <input type="submit" value={this.props.formType} />
+         <input type="text" placeholder="Email" onChange={this.handleChange("email")} value={this.state.email}/>
+         <input type="password" placeholder="Password" onChange={this.handleChange("password")} value={this.state.password}/>
+         <button className="splash-submit">{this.props.formType}</button>
        </form>
      </div>
    )

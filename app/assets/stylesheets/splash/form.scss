@@ -1,3 +1,7 @@
+* {
+  font-family: 'Noto Sans', sans-serif;
+}
+
 .splash-form-container {
   width: 500px;
   height: 350px;
@@ -11,6 +15,33 @@
 }
 
 .splash-form input {
+  box-sizing: border-box;
   margin-bottom: 20px;
-  height: 30px;
+  height: 48px;
+  font-size: 12px;
+  padding: 10px;
+}
+
+ .splash-submit {
+  height: 48px;
+  padding: 20px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 0.1em;
+  background-color: rgb(255, 90, 95);
+  color: white;
+}
+
+.splash-submit:hover {
+  cursor: pointer;
+}
+
+
+.close-icon:hover {
+  cursor: pointer;
+}
+
+.close-icon img {
+  height: 15px;
+  width: 15px;
 }
