@@ -1,0 +1,27 @@
+.red-logo {
+  width: 32px;
+  height: 32px;
+  padding: 13px;
+}
+
+.home-nav-list {
+  float:right;
+  margin-top: 28px;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.home-nav-list li {
+  padding-right: 10px;
+}
+
+.home-nav-list a {
+  padding: 17px;
+  text-decoration: none;
+  color: white;
+}
+
+.home-nav-list a:hover {
+  border-bottom: 2px solid white;
+}
