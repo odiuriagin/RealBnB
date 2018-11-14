@@ -50,7 +50,7 @@ class SessionForm extends React.Component {
      <div className="splash-form-container">
        <a onClick={this.props.closeModal} className="close-icon"><img src={window.close_icon}/></a>
        <div>
-         <ul>{errors}</ul>
+         <ul className="errors">{errors}</ul>
        </div>
        <form className="splash-form" onSubmit={this.handleSubmit}>
          {name}
