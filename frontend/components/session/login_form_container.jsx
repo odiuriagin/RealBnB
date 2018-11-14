@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {login} from '../../actions/session_actions';
+import {login, clearErrors} from '../../actions/session_actions';
 import {openModal, closeModal} from '../../actions/modal_actions.js';
 import SessionForm from './session_form';
 
@@ -15,11 +15,14 @@ const mapDispatchToProps = (dispatch) => {
   return {
     processForm: (user) => dispatch(login(user)),
     otherForm: (
-      <button onClick={() => dispatch(openModal('signup'))}>
-        Sign Up
-      </button>
+      <p className="switch-form-type">Already have an Airbnb account?
+        <a onClick={() => dispatch(openModal('signup'))}>
+          Sign Up
+        </a>
+      </p>
     ),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    clearErrors: () => dispatch(clearErrors())
   };
 };
 

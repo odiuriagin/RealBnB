@@ -1,6 +1,3 @@
-* {
-  font-family: 'Noto Sans', sans-serif;
-}
 
 .splash-form-container {
   width: 500px;
@@ -12,28 +9,51 @@
 .splash-form {
   display: flex;
   flex-direction: column;
+  margin-top: 12px;
 }
 
 .splash-form input {
   box-sizing: border-box;
   margin-bottom: 20px;
   height: 48px;
-  font-size: 12px;
+  font-size: 15px;
+  color: black;
   padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ebebeb;
 }
 
  .splash-submit {
   height: 48px;
   padding: 20px;
-  font-size: 12px;
+  font-size: 15px;
   text-align: center;
   line-height: 0.1em;
   background-color: rgb(255, 90, 95);
   color: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ebebeb;
 }
 
 .splash-submit:hover {
   cursor: pointer;
+}
+
+.switch-form-type {
+  border-top: 1px solid #ebebeb;
+  padding-top: 16px;
+  margin: 12px auto;
+}
+
+.switch-form-type a {
+  margin-left: 5px;
+  color: #008489;
+  cursor: pointer;
+}
+
+.switch-form-type a:hover {
+  text-decoration: underline;
 }
 
 

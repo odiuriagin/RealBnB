@@ -25,6 +25,16 @@ class SessionForm extends React.Component {
    });
  }
 
+ componentDidUpdate(oldProps) {
+   if (oldProps.formType !== this.props.formType) {
+     this.props.clearErrors();
+   }
+ }
+
+ componentWillUnmount(oldProps) {
+    this.props.clearErrors();
+ }
+
  render() {
    const errors = this.props.errors.map( (err) => {
      return(<li key={err}>{err}</li>)
@@ -44,9 +54,10 @@ class SessionForm extends React.Component {
        </div>
        <form className="splash-form" onSubmit={this.handleSubmit}>
          {name}
-         <input type="text" placeholder="Email" onChange={this.handleChange("email")} value={this.state.email}/>
+         <input type="text" placeholder="Email Address" onChange={this.handleChange("email")} value={this.state.email}/>
          <input type="password" placeholder="Password" onChange={this.handleChange("password")} value={this.state.password}/>
          <button className="splash-submit">{this.props.formType}</button>
+         {this.props.otherForm}
        </form>
      </div>
    )
