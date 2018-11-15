@@ -1,3 +1,33 @@
+.properties-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.property-location {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  color: black;
+}
+
+.property-link {
+  text-decoration: none;
+}
+
+.property-description {
+  font-weight: 400;
+  color: #494949;
+}
+
+.property-price {
+  font-size: 14px;
+}
+
+.properties-list li {
+  margin: 15px;
+  list-style: none;
+}
+
 .properties-list li img {
   width: 304px;
   height: 176px;

@@ -1,16 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 const IndexPropertiesItem = ({ property }) => {
   return (
     <li>
-      <Link to={`api/properties/${property.id}`}>
+      <NavLink className="property-link" to={`api/properties/${property.id}`}>
         <img src={"https://goo.gl/T48KR9"} />
-        <p>{property.city}, {property.state}</p>
-        <h3>{property.description}</h3>
-        <p>{property.price}, per night</p>
-      </Link>
+        <p class="property-location">{property.city}, {property.state}</p>
+        <h3 className="property-description">{property.description}</h3>
+        <p className="property-price">${property.price}, per night &middot; Free cancellation</p>
+      </NavLink>
     </li>);
 };
 

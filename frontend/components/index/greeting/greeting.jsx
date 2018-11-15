@@ -9,7 +9,8 @@ let greeting;
 if (currentUser) {
   return (
     <div>
-      <h2>Welcome back, {currentUser.name}</h2>
+      <h2 className="greeting">Welcome, {currentUser.name}!</h2>
+      <h3 className="greeting">Recommended for you</h3>
     </div>
   );
 } else {
