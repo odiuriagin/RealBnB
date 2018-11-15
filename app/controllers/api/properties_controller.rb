@@ -3,7 +3,7 @@ class Api::PropertiesController < ApplicationController
   before_action :ensure_logged_in, only: [:create, :update]
 
   def index
-    @properties = Property.all.includes(:reviews, :photos, :bookings)
+    @properties = Property.all
     render :index
   end
 

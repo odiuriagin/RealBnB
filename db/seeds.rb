@@ -6,11 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-property1 = Property.create!(
+
+property4 = Property.create!(
   city: "New York",
   state: "NY",
   zip: 10001,
-  address: "112 W 38th str",
+  address: "260 W 38th str",
   description: "Two-bedroom apartment",
   host_id: 18,
   price: 150,
@@ -22,11 +23,11 @@ property1 = Property.create!(
   kitchen: true,
   breakfast: false
 )
-property2 = Property.create!(
+property5 = Property.create!(
   city: "New York",
   state: "NY",
   zip: 10002,
-  address: "255 E 13th Str",
+  address: "261 E 13th Str",
   description: "One-bedroom apartment",
   host_id: 2,
   price: 100,
@@ -38,11 +39,256 @@ property2 = Property.create!(
   kitchen: true,
   breakfast: false
 )
-property3 = Property.create!(
+property6 = Property.create!(
   city: "New York",
   state: "NY",
   zip: 10003,
-  address: "10 W 58th str",
+  address: "262 W 58th str",
+  description: "Penthouse",
+  host_id: 19,
+  price: 250,
+  longitude: 40.755756,
+  latitude: -73.984311,
+  wifi: false,
+  cable_tv: false,
+  washer: true,
+  kitchen: true,
+  breakfast: false
+)
+
+property7 = Property.create!(
+  city: "New York",
+  state: "NY",
+  zip: 10001,
+  address: "263 W 38th str",
+  description: "Two-bedroom apartment",
+  host_id: 18,
+  price: 150,
+  longitude: 40.751555,
+  latitude: -73.980391,
+  wifi: false,
+  cable_tv: false,
+  washer: true,
+  kitchen: true,
+  breakfast: false
+)
+property8 = Property.create!(
+  city: "New York",
+  state: "NY",
+  zip: 10002,
+  address: "264 E 13th Str",
+  description: "One-bedroom apartment",
+  host_id: 2,
+  price: 100,
+  longitude: 40.755593,
+  latitude: -73.981049,
+  wifi: true,
+  cable_tv: true,
+  washer: true,
+  kitchen: true,
+  breakfast: false
+)
+property9 = Property.create!(
+  city: "New York",
+  state: "NY",
+  zip: 10003,
+  address: "265 W 58th str",
+  description: "Penthouse",
+  host_id: 19,
+  price: 250,
+  longitude: 40.755756,
+  latitude: -73.984311,
+  wifi: false,
+  cable_tv: false,
+  washer: true,
+  kitchen: true,
+  breakfast: false
+)
+
+property10 = Property.create!(
+  city: "New York",
+  state: "NY",
+  zip: 10001,
+  address: "266 W 38th str",
+  description: "Two-bedroom apartment",
+  host_id: 18,
+  price: 150,
+  longitude: 40.751555,
+  latitude: -73.980391,
+  wifi: false,
+  cable_tv: false,
+  washer: true,
+  kitchen: true,
+  breakfast: false
+)
+property11 = Property.create!(
+  city: "New York",
+  state: "NY",
+  zip: 10002,
+  address: "267 E 13th Str",
+  description: "One-bedroom apartment",
+  host_id: 2,
+  price: 100,
+  longitude: 40.755593,
+  latitude: -73.981049,
+  wifi: true,
+  cable_tv: true,
+  washer: true,
+  kitchen: true,
+  breakfast: false
+)
+property12 = Property.create!(
+  city: "New York",
+  state: "NY",
+  zip: 10003,
+  address: "268 W 58th str",
+  description: "Penthouse",
+  host_id: 19,
+  price: 250,
+  longitude: 40.755756,
+  latitude: -73.984311,
+  wifi: false,
+  cable_tv: false,
+  washer: true,
+  kitchen: true,
+  breakfast: false
+)
+
+property13 = Property.create!(
+  city: "New York",
+  state: "NY",
+  zip: 10001,
+  address: "269 W 38th str",
+  description: "Two-bedroom apartment",
+  host_id: 18,
+  price: 150,
+  longitude: 40.751555,
+  latitude: -73.980391,
+  wifi: false,
+  cable_tv: false,
+  washer: true,
+  kitchen: true,
+  breakfast: false
+)
+property14 = Property.create!(
+  city: "New York",
+  state: "NY",
+  zip: 10002,
+  address: "270 E 13th Str",
+  description: "One-bedroom apartment",
+  host_id: 2,
+  price: 100,
+  longitude: 40.755593,
+  latitude: -73.981049,
+  wifi: true,
+  cable_tv: true,
+  washer: true,
+  kitchen: true,
+  breakfast: false
+)
+property15 = Property.create!(
+  city: "New York",
+  state: "NY",
+  zip: 10003,
+  address: "271 W 58th str",
+  description: "Penthouse",
+  host_id: 19,
+  price: 250,
+  longitude: 40.755756,
+  latitude: -73.984311,
+  wifi: false,
+  cable_tv: false,
+  washer: true,
+  kitchen: true,
+  breakfast: false
+)
+
+property16 = Property.create!(
+  city: "New York",
+  state: "NY",
+  zip: 10001,
+  address: "272 W 38th str",
+  description: "Two-bedroom apartment",
+  host_id: 18,
+  price: 150,
+  longitude: 40.751555,
+  latitude: -73.980391,
+  wifi: false,
+  cable_tv: false,
+  washer: true,
+  kitchen: true,
+  breakfast: false
+)
+property17 = Property.create!(
+  city: "New York",
+  state: "NY",
+  zip: 10002,
+  address: "273 E 13th Str",
+  description: "One-bedroom apartment",
+  host_id: 2,
+  price: 100,
+  longitude: 40.755593,
+  latitude: -73.981049,
+  wifi: true,
+  cable_tv: true,
+  washer: true,
+  kitchen: true,
+  breakfast: false
+)
+property18 = Property.create!(
+  city: "New York",
+  state: "NY",
+  zip: 10003,
+  address: "274 W 58th str",
+  description: "Penthouse",
+  host_id: 19,
+  price: 250,
+  longitude: 40.755756,
+  latitude: -73.984311,
+  wifi: false,
+  cable_tv: false,
+  washer: true,
+  kitchen: true,
+  breakfast: false
+)
+
+property19 = Property.create!(
+  city: "New York",
+  state: "NY",
+  zip: 10001,
+  address: "275 W 38th str",
+  description: "Two-bedroom apartment",
+  host_id: 18,
+  price: 150,
+  longitude: 40.751555,
+  latitude: -73.980391,
+  wifi: false,
+  cable_tv: false,
+  washer: true,
+  kitchen: true,
+  breakfast: false
+)
+property20 = Property.create!(
+  city: "New York",
+  state: "NY",
+  zip: 10002,
+  address: "276 E 13th Str",
+  description: "One-bedroom apartment",
+  host_id: 2,
+  price: 100,
+  longitude: 40.755593,
+  latitude: -73.981049,
+  wifi: true,
+  cable_tv: true,
+  washer: true,
+  kitchen: true,
+  breakfast: false
+)
+property21 = Property.create!(
+  city: "New York",
+  state: "NY",
+  zip: 10003,
+  address: "277 W 58th str",
   description: "Penthouse",
   host_id: 19,
   price: 250,

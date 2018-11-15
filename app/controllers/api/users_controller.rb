@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
 
   def index
-    @users = User.all.includes(:reviews, :photos, :bookings)
+    @users = User.all
   end
 
   def create
