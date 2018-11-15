@@ -1,7 +1,7 @@
 
 .splash-form-container {
   width: 500px;
-  height: 350px;
+  height: 100%;
   background-color: white;
   padding: 20px;
 }
@@ -68,8 +68,40 @@
 
 .errors {
   list-style: none;
+  padding-left: 0;
+  width: 95%;
 }
 
 .errors li {
-  color: red;
+  margin-top:12px;
+  line-height: 2.4;
+  font-size: 14px;
+  padding: 10px;
+  border: 2px solid #ebebeb;
+  border-radius: 10px;
+  text-align: center;
+  color: rgb(72, 72, 72);
+  width: 100%;
+  height: 36px;
+  background-color: white;
+}
+
+.errors span.error-logo {
+  background-color: orange;
+  width: 53px;
+  height: 58px;
+  display: block;
+  float: left;
+  position: absolute;
+  top: 55px;
+  left: 20px;
+  border-radius: 10px 0 0 10px;
+}
+
+.errors span.error-logo img {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 16px;
+  right: 13px;
 }

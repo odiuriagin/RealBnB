@@ -37,7 +37,7 @@ class SessionForm extends React.Component {
 
  render() {
    const errors = this.props.errors.map( (err) => {
-     return(<li key={err}>{err}</li>)
+     return(<li key={err}><span className="error-logo"><img src={window.error}/></span>{err}</li>)
    });
 
    let name = <div></div>;
@@ -54,7 +54,7 @@ class SessionForm extends React.Component {
        </div>
        <form className="splash-form" onSubmit={this.handleSubmit}>
          {name}
-         <input type="text" placeholder="Email Address" onChange={this.handleChange("email")} value={this.state.email}/>
+         <input type="email" placeholder="Email Address" onChange={this.handleChange("email")} value={this.state.email}/>
          <input type="password" placeholder="Password" onChange={this.handleChange("password")} value={this.state.password}/>
          <button className="splash-submit">{this.props.formType}</button>
          {this.props.otherForm}

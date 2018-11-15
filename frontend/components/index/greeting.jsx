@@ -10,7 +10,6 @@ if (currentUser) {
   return (
     <div>
       <h2>Welcome back, {currentUser.name}</h2>
-      <button onClick={logout}>Log Out</button>
     </div>
   );
 } else {

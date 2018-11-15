@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     processForm: (user) => dispatch(signup(user)),
     otherForm: (
-      <p className="switch-form-type">Don’t have an account?
+      <p className="switch-form-type">Already have an Airbnb account?
         <a onClick={() => dispatch(openModal('login'))}>
           Log In
         </a>

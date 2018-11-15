@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint(8)        not null, primary key
+#  name            :string           not null
+#  email           :string           not null
+#  image_url       :string
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ApplicationRecord
 
   attr_reader :password
@@ -5,6 +19,12 @@ class User < ApplicationRecord
   validates :email, :password_digest, :session_token, presence: true
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
+
+  has_many :properties,
+    foreign_key: :host_id,
+    class_name: 'Property'
+
+  has_one_attached :photo
 
   after_initialize :ensure_session_token
 
