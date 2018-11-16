@@ -12,7 +12,7 @@ const App = () => (
     <Switch>
       <ProtectedRoute exact path="/index" component={Index} />
       <AuthRoute exact path="/" component={Splash} />
-      <Route exact path="/properties/:propertyId" component={ Show } />
+      <ProtectedRoute exact path="/properties/:propertyId" component={ Show } />
     </Switch>
   </div>
 )

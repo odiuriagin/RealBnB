@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 const IndexNav = (props) => {
   let userLogo = window.user_logo;
-  userLogo = props.currentUser ? props.currentUser.image_url : null;
+  userLogo = props.currentUser.image_url ? props.currentUser.image_url : window.user_logo;
   return (
     <div className="main-nav">
       <Link to={'/'}><img src={window.logo_red} className="red-logo" /></Link>
@@ -23,12 +23,3 @@ const IndexNav = (props) => {
 }
 
 export default IndexNav;
-
-// window.logo_white = "<%= image_url('logo_white.png')%>"
-// window.logo_red = "<%= image_url('logo_red.png')%>"
-// window.splash_bg = "<%= image_url('splash_bg.jpg')%>"
-// window.splash_narrow = "<%= image_url('splash_narrow.jpg')%>"
-// window.splash_vertical = "<%= image_url('splash_vertical.jpg')%>"
-// // window.close_icon = "<%= image_url('close_icon.png')%>"
-// window.user_logo = "<%= image_url('user.png')%>"
-// window.error = "<%= image_url('error.png')%>"
