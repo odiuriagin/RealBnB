@@ -1,0 +1,53 @@
+.property-info {
+  width: 40%;
+  width: 40%;
+  margin: 3% 10%;
+  float: left;
+}
+
+.property-description-show {
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.property-city {
+  margin-bottom: 5%;
+}
+
+.property-owner {
+  position: absolute;
+  right: 26px;
+  top: 23px;
+}
+
+.property-header {
+  position:relative;
+}
+
+.property-body {
+  padding: 5% 0;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  text-align: justify;
+}
+
+.property-amenities-heading {
+  padding-top: 5%;
+  font-weight: 700;
+}
+
+.property-amneties-list {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+}
+
+.property-amneties-list li {
+  padding: 10px;
+}
+
+.property-amneties-list li img {
+  margin-right: 5px;
+  width: 16px;
+  height: 16px;
+}

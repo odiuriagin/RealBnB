@@ -1,0 +1,30 @@
+.book-form {
+  width: 30%;
+  height: 505px;
+  float: left;
+  margin-top: 41px;
+  border: 1px solid lightgray;
+}
+
+.book-form-price {
+  width: 90%;
+  padding: 5% 7%;
+  font-weight: 700;
+  font-size: 21px;
+}
+
+.book-form-price span {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.book-form input {
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  height: 48px;
+  font-size: 15px;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ebebeb;
+}

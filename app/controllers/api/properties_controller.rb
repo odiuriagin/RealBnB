@@ -35,7 +35,7 @@ class Api::PropertiesController < ApplicationController
   def property_params
     params.require(:property).permit(:city, :state, :zip, :address,
       :description, :host_id, :price, :longitude, :latitude, :wifi,
-       :cable_tv, :washer, :kitchen, :breakfast)
+       :cable_tv, :washer, :kitchen, :breakfast, :body)
   end
 
 end

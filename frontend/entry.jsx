@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import {fetchProperty, fetchProperties} from './actions/properties_actions';
+import {fetchUser} from './actions/user_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -27,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.dispatch = store.dispatch;
   window.fetchProperty = fetchProperty;
   window.fetchProperties = fetchProperties;
+  window.fetchUser = fetchUser;
+  window.getState = store.getState;
   // RESTING ENDS
 
   ReactDOM.render(<Root store={store} />, root);

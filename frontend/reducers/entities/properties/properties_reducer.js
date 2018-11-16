@@ -9,7 +9,7 @@ const propertiesReducer = (state = {}, action) => {
     case RECEIVE_ALL_PROPERTIES:
       return action.properties;
     case RECEIVE_PROPERTY:
-      return merge({}, state, action.property);
+      return merge({}, state, {[action.property.id]: action.property});
     case REMOVE_PROPERTY:
       newState = merge({}, state);
       delete newState[action.id];
