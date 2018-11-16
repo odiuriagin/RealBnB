@@ -36,8 +36,8 @@ class SessionForm extends React.Component {
  }
 
  render() {
-   const errors = this.props.errors.map( (err) => {
-     return(<li key={err}><span className="error-logo"><img src={window.error}/></span>{err}</li>)
+   const errors = this.props.errors.map( (err, i) => {
+     return(<li key={i}><span className="error-logo"><img src={window.error}/></span>{err}</li>)
    });
 
    let name = <div></div>;
