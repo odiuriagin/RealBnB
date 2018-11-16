@@ -6,6 +6,33 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+
+user1 = User.create!(
+  name: "John",
+  email: "john@gmail.com",
+  password: "starwars"
+)
+
+user2 = User.create!(
+  name: "Bob",
+  email: "bob@gmail.com",
+  password: "starwars"
+)
+
+user3 = User.create!(
+  name: "Bill",
+  email: "bill@gmail.com",
+  password: "starwars"
+)
+
+user4 = User.create!(
+  name: "Demo User",
+  email: "demo@gmail.com",
+  password: "starwars"
+)
+
+Property.destroy_all
 
 property4 = Property.create!(
   city: "New York",
@@ -13,7 +40,7 @@ property4 = Property.create!(
   zip: 10001,
   address: "260 W 38th str",
   description: "Two-bedroom apartment",
-  host_id: 18,
+  host_id: user1.id,
   price: 150,
   longitude: 40.751555,
   latitude: -73.980391,
@@ -29,7 +56,7 @@ property5 = Property.create!(
   zip: 10002,
   address: "261 E 13th Str",
   description: "One-bedroom apartment",
-  host_id: 2,
+  host_id: user2.id,
   price: 100,
   longitude: 40.755593,
   latitude: -73.981049,
@@ -45,7 +72,7 @@ property6 = Property.create!(
   zip: 10003,
   address: "262 W 58th str",
   description: "Penthouse",
-  host_id: 19,
+  host_id: user3.id,
   price: 250,
   longitude: 40.755756,
   latitude: -73.984311,
@@ -62,7 +89,7 @@ property7 = Property.create!(
   zip: 10001,
   address: "263 W 38th str",
   description: "Two-bedroom apartment",
-  host_id: 18,
+  host_id: user1.id,
   price: 150,
   longitude: 40.751555,
   latitude: -73.980391,
@@ -78,7 +105,7 @@ property8 = Property.create!(
   zip: 10002,
   address: "264 E 13th Str",
   description: "One-bedroom apartment",
-  host_id: 2,
+  host_id: user2.id,
   price: 100,
   longitude: 40.755593,
   latitude: -73.981049,
@@ -94,7 +121,7 @@ property9 = Property.create!(
   zip: 10003,
   address: "265 W 58th str",
   description: "Penthouse",
-  host_id: 19,
+  host_id: user3.id,
   price: 250,
   longitude: 40.755756,
   latitude: -73.984311,
@@ -111,7 +138,7 @@ property10 = Property.create!(
   zip: 10001,
   address: "266 W 38th str",
   description: "Two-bedroom apartment",
-  host_id: 18,
+  host_id: user1.id,
   price: 150,
   longitude: 40.751555,
   latitude: -73.980391,
@@ -127,7 +154,7 @@ property11 = Property.create!(
   zip: 10002,
   address: "267 E 13th Str",
   description: "One-bedroom apartment",
-  host_id: 2,
+  host_id: user2.id,
   price: 100,
   longitude: 40.755593,
   latitude: -73.981049,
@@ -143,7 +170,7 @@ property12 = Property.create!(
   zip: 10003,
   address: "268 W 58th str",
   description: "Penthouse",
-  host_id: 19,
+  host_id: user3.id,
   price: 250,
   longitude: 40.755756,
   latitude: -73.984311,
@@ -160,7 +187,7 @@ property13 = Property.create!(
   zip: 10001,
   address: "269 W 38th str",
   description: "Two-bedroom apartment",
-  host_id: 18,
+  host_id: user1.id,
   price: 150,
   longitude: 40.751555,
   latitude: -73.980391,
@@ -176,7 +203,7 @@ property14 = Property.create!(
   zip: 10002,
   address: "270 E 13th Str",
   description: "One-bedroom apartment",
-  host_id: 2,
+  host_id: user2.id,
   price: 100,
   longitude: 40.755593,
   latitude: -73.981049,
@@ -192,7 +219,7 @@ property15 = Property.create!(
   zip: 10003,
   address: "271 W 58th str",
   description: "Penthouse",
-  host_id: 19,
+  host_id: user3.id,
   price: 250,
   longitude: 40.755756,
   latitude: -73.984311,
@@ -209,7 +236,7 @@ property16 = Property.create!(
   zip: 10001,
   address: "272 W 38th str",
   description: "Two-bedroom apartment",
-  host_id: 18,
+  host_id: user1.id,
   price: 150,
   longitude: 40.751555,
   latitude: -73.980391,
@@ -225,7 +252,7 @@ property17 = Property.create!(
   zip: 10002,
   address: "273 E 13th Str",
   description: "One-bedroom apartment",
-  host_id: 2,
+  host_id: user2.id,
   price: 100,
   longitude: 40.755593,
   latitude: -73.981049,
@@ -241,7 +268,7 @@ property18 = Property.create!(
   zip: 10003,
   address: "274 W 58th str",
   description: "Penthouse",
-  host_id: 19,
+  host_id: user3.id,
   price: 250,
   longitude: 40.755756,
   latitude: -73.984311,
@@ -258,7 +285,7 @@ property19 = Property.create!(
   zip: 10001,
   address: "275 W 38th str",
   description: "Two-bedroom apartment",
-  host_id: 18,
+  host_id: user1.id,
   price: 150,
   longitude: 40.751555,
   latitude: -73.980391,
@@ -274,7 +301,7 @@ property20 = Property.create!(
   zip: 10002,
   address: "276 E 13th Str",
   description: "One-bedroom apartment",
-  host_id: 2,
+  host_id: user2.id,
   price: 100,
   longitude: 40.755593,
   latitude: -73.981049,
@@ -290,7 +317,7 @@ property21 = Property.create!(
   zip: 10003,
   address: "277 W 58th str",
   description: "Penthouse",
-  host_id: 19,
+  host_id: user3.id,
   price: 250,
   longitude: 40.755756,
   latitude: -73.984311,
