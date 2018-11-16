@@ -1,0 +1,37 @@
+.column {
+  flex: 33.33%;
+}
+
+.row {
+  display: flex;
+}
+
+.main-photo {
+  width: 45em;
+  height: 25em;
+}
+
+.secondary-photo {
+  width: 22em;
+  height: 12.33em;
+}
+
+img.secondary-photo {
+  transition: transform .5s;
+}
+
+img.main-photo {
+ transition: transform .5s;
+}
+
+
+
+img.secondary-photo:hover {
+  transform: scale(1.5);
+  overflow: hidden;
+}
+
+img.main-photo:hover {
+  transform: scale(1.5);
+  overflow: hidden;
+}

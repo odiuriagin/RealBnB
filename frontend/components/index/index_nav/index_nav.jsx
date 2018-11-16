@@ -3,9 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 const IndexNav = (props) => {
   let userLogo = window.user_logo;
-  if (props.currentUser.image_url) {
-    userLogo = props.currentUser.image_url;
-  }
+  userLogo = props.currentUser ? props.currentUser.image_url : null;
   return (
     <div className="main-nav">
       <Link to={'/'}><img src={window.logo_red} className="red-logo" /></Link>
