@@ -43,5 +43,8 @@
   "bugs": {
     "url": "https://github.com/odiuriagin/RealBnB/issues"
   },
-  "homepage": "https://github.com/odiuriagin/RealBnB#readme"
+  "homepage": "https://github.com/odiuriagin/RealBnB#readme",
+  "devDependencies": {
+    "eslint": "^5.9.0"
+  }
 }
