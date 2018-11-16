@@ -4,7 +4,7 @@ import propertiesReducer from './properties/properties_reducer';
 
 const entitiesReducer = combineReducers({
   users: usersReducer,
-  properties: propertiesReducer
+  properties: propertiesReducer,
 });
 
 export default entitiesReducer;
