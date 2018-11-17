@@ -47,6 +47,10 @@ class BookForm extends React.Component {
               onFocusChange={focusedInput => this.setState({ focusedInput })}
             />
           </div>
+          <p className="book-form-text book-form-guests-text">Guests</p>
+          <input type="number" className="book-form-guests" defaultValue="1" min="1" max="6"></input>
+          <button className="book-form-submit">Book</button>
+          <p className="no-charge">You won’t be charged yet</p>
         </form>
 
     );

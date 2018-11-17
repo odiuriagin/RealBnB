@@ -1,6 +1,6 @@
 .book-form {
-  width: 426px;
-  height: 505px;
+  width: 377px;
+  height: 390px;
   float: left;
   margin: 45px auto;
   border: 1px solid lightgray;
@@ -23,16 +23,15 @@
 .book-form input {
   box-sizing: border-box;
   margin-bottom: 20px;
-  height: 48px;
   font-size: 15px;
-  color: black;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ebebeb;
+  color: #757575;
+  padding: 8px 30px;
+  border: 1px solid #dbdbdb;
 }
 
 .date-picker {
-  width: 427px;
+  width: 377px;
+  height: 94px;
   margin: 0;
   position: relative;
 }
@@ -40,8 +39,47 @@
 .book-form-dates-text {
   font-size: 14px;
   position: relative;
-  top: 41px;
-  left: 72px;
+  top: 20px;
+  left: 32px;
+}
+
+.book-form-text {
+  font-size: 14px;
+  position: relative;
+  top: 20px;
+  left: 32px;
+}
+
+.book-form-guests-text {
+  top: -3px;
+}
+
+.book-form-guests {
+  position: relative;
+  top: 6px;
+  left: 30px;
+  width: 80%;
+  padding-left: 30px;
+}
+
+.book-form-submit {
+  height: 48px;
+  width: 304px;
+  margin: 7px 30px;
+  padding: 20px;
+  font-size: 15px;
+  text-align: center;
+  line-height: 0.1em;
+  background-color: #ff5a5f;
+  color: white;
+  border-radius: 5px;
+}
+
+.no-charge {
+  font-size: 12px;
+  width: 43%;
+  margin: 0 auto;
+  font-weight: 700;
 }
 
 #start-date, #end-date {
@@ -56,10 +94,16 @@
 
 .DateRangePicker {
   position: absolute;
-  top: 45px;
+  top: 9px;
   right: -68px;
 }
 
-.DateInput {
-  width: 50%;
+div.DateInput.DateInput_1 {
+  width: 136px;
+}
+
+.DateRangePickerInput {
+  width: 300px;
+  position: absolute;
+  left: -40px;
 }
