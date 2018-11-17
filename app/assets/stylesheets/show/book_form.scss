@@ -1,16 +1,18 @@
 .book-form {
-  width: 30%;
+  width: 426px;
   height: 505px;
   float: left;
-  margin-top: 41px;
+  margin: 45px auto;
   border: 1px solid lightgray;
 }
 
 .book-form-price {
-  width: 90%;
-  padding: 5% 7%;
+  width: 84%;
+  padding: 5% 0%;
   font-weight: 700;
   font-size: 21px;
+  border-bottom: 1px solid lightgray;
+  margin: 0 auto;
 }
 
 .book-form-price span {
@@ -27,4 +29,37 @@
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ebebeb;
+}
+
+.date-picker {
+  width: 427px;
+  margin: 0;
+  position: relative;
+}
+
+.book-form-dates-text {
+  font-size: 14px;
+  position: relative;
+  top: 41px;
+  left: 72px;
+}
+
+#start-date, #end-date {
+  margin: 0;
+  text-align: center;
+  border: none;
+}
+
+#start-date {
+  border: none;
+}
+
+.DateRangePicker {
+  position: absolute;
+  top: 45px;
+  right: -68px;
+}
+
+.DateInput {
+  width: 50%;
 }

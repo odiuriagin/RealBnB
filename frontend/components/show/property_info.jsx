@@ -44,8 +44,8 @@ class PropertyInfo extends React.Component {
           {breakfast}
         </ul>
       </div>
-      <div className="book-form">
-        <BookForm props={this.props.property}/>
+      <div>
+        <BookForm price={this.props.property.price}/>
       </div>
       </>
     );
