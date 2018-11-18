@@ -22,7 +22,7 @@ user2 = User.create!(
 
 user3 = User.create!(
   name: "Kip Trudel",
-  email: "bill@gmail.com",
+  email: "kip@gmail.com",
   password: "starwars"
 )
 
@@ -63,8 +63,8 @@ user9 = User.create!(
 )
 
 user10 = User.create!(
-  name: "Kip Trudel",
-  email: "bill@gmail.com",
+  name: "Rob Leonard",
+  email: "rob@gmail.com",
   password: "starwars"
 )
 
@@ -131,314 +131,350 @@ user20 = User.create!(
 
 Property.destroy_all
 
-property4 = Property.create!(
+property1 = Property.create!(
+  city: "Long Island City",
+  state: "NY",
+  zip: 11105,
+  address: "23-20 23rd St",
+  description: "Studio",
+  host_id: user1.id,
+  price: 85,
+  longitude: 40.777634,
+  latitude: -73.918725,
+  wifi: true,
+  cable_tv: true,
+  washer: true,
+  kitchen: true,
+  breakfast: true,
+  body: "You will have your own private space consisting of a large, interesting room + private bathroom/shower + your own private entrance + a private foyer area + a private garden/patio area. You will have privacy on your own separate level (the ground level/basement) of the house."
+)
+property2 = Property.create!(
+  city: "Williamsburg",
+  state: "NY",
+  zip: 11211,
+  address: "230 Grand St",
+  description: "Studio Apt. in East Williamsburg",
+  host_id: user2.id,
+  price: 100,
+  longitude: 40.713407,
+  latitude: -73.959474,
+  wifi: true,
+  cable_tv: true,
+  washer: true,
+  kitchen: true,
+  breakfast: false,
+  body: "This is a beautiful garden studio apartment and its great for one person or for a couple. Located in a quiet street just 3 blocks away from the L train,10 min from downtown Manhattan, and a short walk away from the heart of Williamsburg and Bushwick - two of the coolest neighborhoods in Brooklyn, filled with amazing restaurants, bars, art galleries, and shopping."
+)
+property3 = Property.create!(
   city: "New York",
   state: "NY",
-  zip: 10001,
-  address: "260 W 38th str",
-  description: "Two-bedroom apartment",
-  host_id: user1.id,
-  price: 150,
-  longitude: 40.751555,
-  latitude: -73.980391,
+  zip: 10075,
+  address: "201 E 80th St",
+  description: "Cozy New York Studio",
+  host_id: user3.id,
+  price: 120,
+  longitude: 40.774971,
+  latitude: -73.955824,
   wifi: false,
   cable_tv: false,
   washer: true,
   kitchen: true,
   breakfast: false,
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  body: "If you don't need a huge place, you will love this one! It's a studio with high ceilings and carpet floors. That's a first floor apartment, windows are facing East 80th St, but it's a very quiet street."
+)
+
+property4 = Property.create!(
+  city: "New York",
+  state: "NY",
+  zip: 10028,
+  address: "1441 3rd Ave",
+  description: "Apartment near Museum Mile",
+  host_id: user4.id,
+  price: 150,
+  longitude: 40.775759,
+  latitude: -73.955835,
+  wifi: true,
+  cable_tv: true,
+  washer: true,
+  kitchen: true,
+  breakfast: false,
+  body: "This is a PRIVATE APARTMENT in the heart of Manhattan. Less than 15 min walk to the Metropolitan Museum of Art and Central Park. 5 minute walk to metro. Tons of trendy restaurants and bars nearby. NOT to be confused with places in Harlem, New Jersey or the other boroughs like Brooklyn and Queens. This is PRIME MANHATTAN location in the tony Upper East Side."
 )
 property5 = Property.create!(
   city: "New York",
   state: "NY",
-  zip: 10002,
-  address: "261 E 13th Str",
-  description: "One-bedroom apartment",
-  host_id: user2.id,
-  price: 100,
-  longitude: 40.755593,
-  latitude: -73.981049,
+  zip: 10017,
+  address: "415 Madison Ave",
+  description: "BEST LOCATION in MIDTOWN",
+  host_id: user5.id,
+  price: 170,
+  longitude: 40.756746,
+  latitude: -73.975837,
   wifi: true,
   cable_tv: true,
   washer: true,
   kitchen: true,
   breakfast: false,
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-)
-property6 = Property.create!(
-  city: "New York",
-  state: "NY",
-  zip: 10003,
-  address: "262 W 58th str",
-  description: "Penthouse",
-  host_id: user3.id,
-  price: 250,
-  longitude: 40.755756,
-  latitude: -73.984311,
-  wifi: false,
-  cable_tv: false,
-  washer: true,
-  kitchen: true,
-  breakfast: false,
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  body: "WELCOME to this beautiful newly renovated apartment, which is located in the HEART of Manhattan in the townhouse type walk-up building. Midtown is both the geographic and symbolic center of New York City.With its busy sidewalks, great attractions, countless restaurants, chic bars and largest stores you get the best deal in Manhattan."
 )
 
-property7 = Property.create!(
-  city: "New York",
+property6 = Property.create!(
+  city: "Long Island City",
   state: "NY",
-  zip: 10001,
-  address: "263 W 38th str",
-  description: "Two-bedroom apartment",
-  host_id: user1.id,
-  price: 150,
-  longitude: 40.751555,
-  latitude: -73.980391,
-  wifi: false,
-  cable_tv: false,
+  zip: 11105,
+  address: "23-21 23rd St",
+  description: "Studio",
+  host_id: user6.id,
+  price: 85,
+  longitude: 40.777634,
+  latitude: -73.918725,
+  wifi: true,
+  cable_tv: true,
+  washer: true,
+  kitchen: true,
+  breakfast: true,
+  body: "You will have your own private space consisting of a large, interesting room + private bathroom/shower + your own private entrance + a private foyer area + a private garden/patio area. You will have privacy on your own separate level (the ground level/basement) of the house."
+)
+property7 = Property.create!(
+  city: "Williamsburg",
+  state: "NY",
+  zip: 11211,
+  address: "231 Grand St",
+  description: "Studio Apt. in East Williamsburg",
+  host_id: user7.id,
+  price: 100,
+  longitude: 40.713407,
+  latitude: -73.959474,
+  wifi: true,
+  cable_tv: true,
   washer: true,
   kitchen: true,
   breakfast: false,
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  body: "This is a beautiful garden studio apartment and its great for one person or for a couple. Located in a quiet street just 3 blocks away from the L train,10 min from downtown Manhattan, and a short walk away from the heart of Williamsburg and Bushwick - two of the coolest neighborhoods in Brooklyn, filled with amazing restaurants, bars, art galleries, and shopping."
 )
 property8 = Property.create!(
   city: "New York",
   state: "NY",
-  zip: 10002,
-  address: "264 E 13th Str",
-  description: "One-bedroom apartment",
-  host_id: user2.id,
-  price: 100,
-  longitude: 40.755593,
-  latitude: -73.981049,
-  wifi: true,
-  cable_tv: true,
+  zip: 10075,
+  address: "202 E 80th St",
+  description: "Cozy New York Studio",
+  host_id: user8.id,
+  price: 120,
+  longitude: 40.774971,
+  latitude: -73.955824,
+  wifi: false,
+  cable_tv: false,
   washer: true,
   kitchen: true,
   breakfast: false,
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  body: "If you don't need a huge place, you will love this one! It's a studio with high ceilings and carpet floors. That's a first floor apartment, windows are facing East 80th St, but it's a very quiet street."
 )
+
 property9 = Property.create!(
   city: "New York",
   state: "NY",
-  zip: 10003,
-  address: "265 W 58th str",
-  description: "Penthouse",
-  host_id: user3.id,
-  price: 250,
-  longitude: 40.755756,
-  latitude: -73.984311,
-  wifi: false,
-  cable_tv: false,
+  zip: 10028,
+  address: "1442 3rd Ave",
+  description: "Apartment near Museum Mile",
+  host_id: user9.id,
+  price: 150,
+  longitude: 40.775759,
+  latitude: -73.955835,
+  wifi: true,
+  cable_tv: true,
   washer: true,
   kitchen: true,
   breakfast: false,
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  body: "This is a PRIVATE APARTMENT in the heart of Manhattan. Less than 15 min walk to the Metropolitan Museum of Art and Central Park. 5 minute walk to metro. Tons of trendy restaurants and bars nearby. NOT to be confused with places in Harlem, New Jersey or the other boroughs like Brooklyn and Queens. This is PRIME MANHATTAN location in the tony Upper East Side."
 )
-
 property10 = Property.create!(
   city: "New York",
   state: "NY",
-  zip: 10001,
-  address: "266 W 38th str",
-  description: "Two-bedroom apartment",
-  host_id: user1.id,
-  price: 150,
-  longitude: 40.751555,
-  latitude: -73.980391,
-  wifi: false,
-  cable_tv: false,
-  washer: true,
-  kitchen: true,
-  breakfast: false,
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-)
-property11 = Property.create!(
-  city: "New York",
-  state: "NY",
-  zip: 10002,
-  address: "267 E 13th Str",
-  description: "One-bedroom apartment",
-  host_id: user2.id,
-  price: 100,
-  longitude: 40.755593,
-  latitude: -73.981049,
+  zip: 10017,
+  address: "416 Madison Ave",
+  description: "BEST LOCATION in MIDTOWN",
+  host_id: user10.id,
+  price: 170,
+  longitude: 40.756746,
+  latitude: -73.975837,
   wifi: true,
   cable_tv: true,
   washer: true,
   kitchen: true,
   breakfast: false,
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  body: "WELCOME to this beautiful newly renovated apartment, which is located in the HEART of Manhattan in the townhouse type walk-up building. Midtown is both the geographic and symbolic center of New York City.With its busy sidewalks, great attractions, countless restaurants, chic bars and largest stores you get the best deal in Manhattan."
+)
+
+property11 = Property.create!(
+  city: "Long Island City",
+  state: "NY",
+  zip: 11105,
+  address: "23-22 23rd St",
+  description: "Studio",
+  host_id: user11.id,
+  price: 85,
+  longitude: 40.777634,
+  latitude: -73.918725,
+  wifi: true,
+  cable_tv: true,
+  washer: true,
+  kitchen: true,
+  breakfast: true,
+  body: "You will have your own private space consisting of a large, interesting room + private bathroom/shower + your own private entrance + a private foyer area + a private garden/patio area. You will have privacy on your own separate level (the ground level/basement) of the house."
 )
 property12 = Property.create!(
-  city: "New York",
+  city: "Williamsburg",
   state: "NY",
-  zip: 10003,
-  address: "268 W 58th str",
-  description: "Penthouse",
-  host_id: user3.id,
-  price: 250,
-  longitude: 40.755756,
-  latitude: -73.984311,
-  wifi: false,
-  cable_tv: false,
+  zip: 11211,
+  address: "232 Grand St",
+  description: "Studio Apt. in East Williamsburg",
+  host_id: user12.id,
+  price: 100,
+  longitude: 40.713407,
+  latitude: -73.959474,
+  wifi: true,
+  cable_tv: true,
   washer: true,
   kitchen: true,
   breakfast: false,
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  body: "This is a beautiful garden studio apartment and its great for one person or for a couple. Located in a quiet street just 3 blocks away from the L train,10 min from downtown Manhattan, and a short walk away from the heart of Williamsburg and Bushwick - two of the coolest neighborhoods in Brooklyn, filled with amazing restaurants, bars, art galleries, and shopping."
 )
-
 property13 = Property.create!(
   city: "New York",
   state: "NY",
-  zip: 10001,
-  address: "269 W 38th str",
-  description: "Two-bedroom apartment",
-  host_id: user1.id,
-  price: 150,
-  longitude: 40.751555,
-  latitude: -73.980391,
+  zip: 10075,
+  address: "203 E 80th St",
+  description: "Cozy New York Studio",
+  host_id: user13.id,
+  price: 120,
+  longitude: 40.774971,
+  latitude: -73.955824,
   wifi: false,
   cable_tv: false,
   washer: true,
   kitchen: true,
   breakfast: false,
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  body: "If you don't need a huge place, you will love this one! It's a studio with high ceilings and carpet floors. That's a first floor apartment, windows are facing East 80th St, but it's a very quiet street."
 )
+
 property14 = Property.create!(
   city: "New York",
   state: "NY",
-  zip: 10002,
-  address: "270 E 13th Str",
-  description: "One-bedroom apartment",
-  host_id: user2.id,
-  price: 100,
-  longitude: 40.755593,
-  latitude: -73.981049,
+  zip: 10028,
+  address: "1443 3rd Ave",
+  description: "Apartment near Museum Mile",
+  host_id: user14.id,
+  price: 150,
+  longitude: 40.775759,
+  latitude: -73.955835,
   wifi: true,
   cable_tv: true,
   washer: true,
   kitchen: true,
   breakfast: false,
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  body: "This is a PRIVATE APARTMENT in the heart of Manhattan. Less than 15 min walk to the Metropolitan Museum of Art and Central Park. 5 minute walk to metro. Tons of trendy restaurants and bars nearby. NOT to be confused with places in Harlem, New Jersey or the other boroughs like Brooklyn and Queens. This is PRIME MANHATTAN location in the tony Upper East Side."
 )
 property15 = Property.create!(
   city: "New York",
   state: "NY",
-  zip: 10003,
-  address: "271 W 58th str",
-  description: "Penthouse",
-  host_id: user3.id,
-  price: 250,
-  longitude: 40.755756,
-  latitude: -73.984311,
-  wifi: false,
-  cable_tv: false,
-  washer: true,
-  kitchen: true,
-  breakfast: false,
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-)
-
-property16 = Property.create!(
-  city: "New York",
-  state: "NY",
-  zip: 10001,
-  address: "272 W 38th str",
-  description: "Two-bedroom apartment",
-  host_id: user1.id,
-  price: 150,
-  longitude: 40.751555,
-  latitude: -73.980391,
-  wifi: false,
-  cable_tv: false,
-  washer: true,
-  kitchen: true,
-  breakfast: false,
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-)
-property17 = Property.create!(
-  city: "New York",
-  state: "NY",
-  zip: 10002,
-  address: "273 E 13th Str",
-  description: "One-bedroom apartment",
-  host_id: user2.id,
-  price: 100,
-  longitude: 40.755593,
-  latitude: -73.981049,
+  zip: 10017,
+  address: "417 Madison Ave",
+  description: "BEST LOCATION in MIDTOWN",
+  host_id: user15.id,
+  price: 170,
+  longitude: 40.756746,
+  latitude: -73.975837,
   wifi: true,
   cable_tv: true,
   washer: true,
   kitchen: true,
   breakfast: false,
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  body: "WELCOME to this beautiful newly renovated apartment, which is located in the HEART of Manhattan in the townhouse type walk-up building. Midtown is both the geographic and symbolic center of New York City.With its busy sidewalks, great attractions, countless restaurants, chic bars and largest stores you get the best deal in Manhattan."
+)
+
+property16 = Property.create!(
+  city: "Long Island City",
+  state: "NY",
+  zip: 11105,
+  address: "23-23 23rd St",
+  description: "Studio",
+  host_id: user16.id,
+  price: 85,
+  longitude: 40.777634,
+  latitude: -73.918725,
+  wifi: true,
+  cable_tv: true,
+  washer: true,
+  kitchen: true,
+  breakfast: true,
+  body: "You will have your own private space consisting of a large, interesting room + private bathroom/shower + your own private entrance + a private foyer area + a private garden/patio area. You will have privacy on your own separate level (the ground level/basement) of the house."
+)
+property17 = Property.create!(
+  city: "Williamsburg",
+  state: "NY",
+  zip: 11211,
+  address: "233 Grand St",
+  description: "Studio Apt. in East Williamsburg",
+  host_id: user17.id,
+  price: 100,
+  longitude: 40.713407,
+  latitude: -73.959474,
+  wifi: true,
+  cable_tv: true,
+  washer: true,
+  kitchen: true,
+  breakfast: false,
+  body: "This is a beautiful garden studio apartment and its great for one person or for a couple. Located in a quiet street just 3 blocks away from the L train,10 min from downtown Manhattan, and a short walk away from the heart of Williamsburg and Bushwick - two of the coolest neighborhoods in Brooklyn, filled with amazing restaurants, bars, art galleries, and shopping."
 )
 property18 = Property.create!(
   city: "New York",
   state: "NY",
-  zip: 10003,
-  address: "274 W 58th str",
-  description: "Penthouse",
-  host_id: user3.id,
-  price: 250,
-  longitude: 40.755756,
-  latitude: -73.984311,
+  zip: 10075,
+  address: "204 E 80th St",
+  description: "Cozy New York Studio",
+  host_id: user18.id,
+  price: 120,
+  longitude: 40.774971,
+  latitude: -73.955824,
   wifi: false,
   cable_tv: false,
   washer: true,
   kitchen: true,
   breakfast: false,
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  body: "If you don't need a huge place, you will love this one! It's a studio with high ceilings and carpet floors. That's a first floor apartment, windows are facing East 80th St, but it's a very quiet street."
 )
 
 property19 = Property.create!(
   city: "New York",
   state: "NY",
-  zip: 10001,
-  address: "275 W 38th str",
-  description: "Two-bedroom apartment",
-  host_id: user1.id,
+  zip: 10028,
+  address: "1445 3rd Ave",
+  description: "Apartment near Museum Mile",
+  host_id: user19.id,
   price: 150,
-  longitude: 40.751555,
-  latitude: -73.980391,
-  wifi: false,
-  cable_tv: false,
-  washer: true,
-  kitchen: true,
-  breakfast: false,
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-)
-property20 = Property.create!(
-  city: "New York",
-  state: "NY",
-  zip: 10002,
-  address: "276 E 13th Str",
-  description: "One-bedroom apartment",
-  host_id: user2.id,
-  price: 100,
-  longitude: 40.755593,
-  latitude: -73.981049,
+  longitude: 40.775759,
+  latitude: -73.955835,
   wifi: true,
   cable_tv: true,
   washer: true,
   kitchen: true,
   breakfast: false,
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  body: "This is a PRIVATE APARTMENT in the heart of Manhattan. Less than 15 min walk to the Metropolitan Museum of Art and Central Park. 5 minute walk to metro. Tons of trendy restaurants and bars nearby. NOT to be confused with places in Harlem, New Jersey or the other boroughs like Brooklyn and Queens. This is PRIME MANHATTAN location in the tony Upper East Side."
 )
-property21 = Property.create!(
+property20 = Property.create!(
   city: "New York",
   state: "NY",
-  zip: 10003,
-  address: "277 W 58th str",
-  description: "Penthouse",
-  host_id: user3.id,
-  price: 250,
-  longitude: 40.755756,
-  latitude: -73.984311,
-  wifi: false,
-  cable_tv: false,
+  zip: 10017,
+  address: "419 Madison Ave",
+  description: "BEST LOCATION in MIDTOWN",
+  host_id: user20.id,
+  price: 170,
+  longitude: 40.756746,
+  latitude: -73.975837,
+  wifi: true,
+  cable_tv: true,
   washer: true,
   kitchen: true,
   breakfast: false,
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  body: "WELCOME to this beautiful newly renovated apartment, which is located in the HEART of Manhattan in the townhouse type walk-up building. Midtown is both the geographic and symbolic center of New York City.With its busy sidewalks, great attractions, countless restaurants, chic bars and largest stores you get the best deal in Manhattan."
 )
