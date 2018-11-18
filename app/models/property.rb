@@ -19,6 +19,7 @@
 #  breakfast   :boolean          default(FALSE), not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  body        :text
 #
 
 class Property < ApplicationRecord
@@ -31,7 +32,25 @@ class Property < ApplicationRecord
     foreign_key: :host_id,
     class_name: 'User'
 
-  has_one_attached :photo
+  has_many :bookings,
+    foreign_key: :property_id,
+    class_name: 'Booking'
+
+  has_many_attached :photos
+
+  def book_dates
+    dates = []
+
+    self.bookings.each do |booking|
+      start_date = booking.check_in
+      end_date = booking.check_out
+      (start_date..end_date).each do |date|
+        dates << date
+      end
+
+      return dates
+    end
+  end
 
 
 end

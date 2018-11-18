@@ -24,6 +24,14 @@ class User < ApplicationRecord
     foreign_key: :host_id,
     class_name: 'Property'
 
+  has_many :bookings,
+    foreign_key: :user_id,
+    class_name: 'Booking'
+
+  has_many :booked_properties,
+    through: :bookings,
+    source: :property
+
   has_one_attached :photo
 
   after_initialize :ensure_session_token

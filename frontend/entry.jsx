@@ -4,6 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 import {fetchProperty, fetchProperties} from './actions/properties_actions';
 import {fetchUser} from './actions/user_actions';
+import {createBooking} from './util/booking_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -26,9 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // TESTING STARTS
   window.dispatch = store.dispatch;
-  window.fetchProperty = fetchProperty;
-  window.fetchProperties = fetchProperties;
-  window.fetchUser = fetchUser;
+  window.createBooking = createBooking;
   window.getState = store.getState;
   // RESTING ENDS
 

@@ -9,26 +9,123 @@
 User.destroy_all
 
 user1 = User.create!(
-  name: "John",
+  name: "John Smith",
   email: "john@gmail.com",
   password: "starwars"
 )
 
 user2 = User.create!(
-  name: "Bob",
+  name: "Bob Brown",
   email: "bob@gmail.com",
   password: "starwars"
 )
 
 user3 = User.create!(
-  name: "Bill",
+  name: "Kip Trudel",
   email: "bill@gmail.com",
   password: "starwars"
 )
 
 user4 = User.create!(
+  name: "Fulvia Conner",
+  email: "fulvia@gmail.com",
+  password: "starwars"
+)
+
+user5 = User.create!(
+  name: "Derek Scott",
+  email: "derek@gmail.com",
+  password: "starwars"
+)
+
+user6 = User.create!(
+  name: "Loreen Branning",
+  email: "loreen@gmail.com",
+  password: "starwars"
+)
+
+user7 = User.create!(
+  name: "Teodoro Jurek",
+  email: "teodoro@gmail.com",
+  password: "starwars"
+)
+
+user8 = User.create!(
+  name: "Chaya Whitted",
+  email: "chaya@gmail.com",
+  password: "starwars"
+)
+
+user9 = User.create!(
+  name: "Monserrate Liebsch",
+  email: "monserrate@gmail.com",
+  password: "starwars"
+)
+
+user10 = User.create!(
+  name: "Kip Trudel",
+  email: "bill@gmail.com",
+  password: "starwars"
+)
+
+user11 = User.create!(
+  name: "Ta Sturgell",
+  email: "ta@gmail.com",
+  password: "starwars"
+)
+
+user12 = User.create!(
+  name: "Juana Elks",
+  email: "juana@gmail.com",
+  password: "starwars"
+)
+
+user13 = User.create!(
+  name: "Stephan Mings",
+  email: "stephan@gmail.com",
+  password: "starwars"
+)
+
+
+user14 = User.create!(
+  name: "Magali Gillespie",
+  email: "magali@gmail.com",
+  password: "starwars"
+)
+
+user15 = User.create!(
+  name: "Jonathon Achorn",
+  email: "jonathon@gmail.com",
+  password: "starwars"
+)
+
+user16 = User.create!(
   name: "Demo User",
   email: "demo@gmail.com",
+  password: "starwars"
+)
+
+user17 = User.create!(
+  name: "Nenita Carreno",
+  email: "nenita@gmail.com",
+  password: "starwars"
+)
+
+user18 = User.create!(
+  name: "Jesse Sarmiento",
+  email: "jesse@gmail.com",
+  password: "starwars"
+)
+
+user19 = User.create!(
+  name: "Ethelene Vaught",
+  email: "ethelene@gmail.com",
+  password: "starwars"
+)
+
+user20 = User.create!(
+  name: "Ashlea Matchett",
+  email: "ashlea@gmail.com",
   password: "starwars"
 )
 

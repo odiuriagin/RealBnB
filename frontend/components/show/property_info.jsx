@@ -1,5 +1,6 @@
 import React from 'react';
-import BookForm from './book_form';
+import BookFormContainer from './book_form_container';
+import ShowPageMap from './show_page_map';
 
 class PropertyInfo extends React.Component {
 
@@ -45,7 +46,9 @@ class PropertyInfo extends React.Component {
         </ul>
       </div>
       <div>
-        <BookForm price={this.props.property.price}/>
+        <BookFormContainer propertyId={this.props.propertyId}/>
+        <ShowPageMap property={property}/>
+        <p className="map-location-note">Exact location information is provided after a booking is confirmed.</p>
       </div>
       </>
     );

@@ -5,7 +5,8 @@ import { fetchProperty } from '../../actions/properties_actions';
 
 const mapStateToProps = (state = {}, ownProps) => {
   return {
-    property: state.entities.properties[ownProps.propertyId]
+    property: state.entities.properties[ownProps.propertyId],
+    currentUserId: state.session.currentUserId,
   }
 };
 

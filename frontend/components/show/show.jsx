@@ -6,6 +6,7 @@ import PropertyInfoContainer from './property_info_container';
 
 
 
+
 const Show = (props) => {
   return (
     <div>
