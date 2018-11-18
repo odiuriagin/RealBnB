@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom'
 import 'react-dates/initialize';
 import { DateRangePicker } from 'react-dates';
 import momentPropTypes from 'react-moment-proptypes';
@@ -18,6 +19,7 @@ class BookForm extends React.Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handlePeopleInput = this.handlePeopleInput.bind(this);
+    this.blockedDays = this.blockedDays.bind(this);
   }
 
   componentDidMount() {
@@ -34,6 +36,16 @@ class BookForm extends React.Component {
       return currentDate.toISOString().substr(0, 10);
   }
 
+  blockedDays(day) {
+    let bookedDates = this.props.property.bookedDates
+    for (let i = 0; i < bookedDates.length; i++) {
+      if (day.format('YYYY-MM-DD') === bookedDates[i]) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   handleSubmit(e) {
     e.preventDefault();
 
@@ -45,6 +57,7 @@ class BookForm extends React.Component {
     }
 
     this.props.createBooking(booking_info)
+    this.props.history.push('/trips')
 
   }
 
@@ -69,6 +82,7 @@ class BookForm extends React.Component {
               showClearDates={true}
               endDatePlaceholderText={this.getTomorrow()}
               onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
+              isDayBlocked={day => this.blockedDays(day)}
               focusedInput={this.state.focusedInput}
               onFocusChange={focusedInput => this.setState({ focusedInput })}
             />
@@ -83,4 +97,4 @@ class BookForm extends React.Component {
 }
 };
 
-export default BookForm;
+export default withRouter(BookForm);

@@ -39,17 +39,19 @@ class Property < ApplicationRecord
   has_many_attached :photos
 
   def book_dates
-    dates = []
+    result = []
 
     self.bookings.each do |booking|
-      start_date = booking.check_in
-      end_date = booking.check_out
-      (start_date..end_date).each do |date|
-        dates << date
-      end
+      start = booking.check_in
+      stop = booking.check_out
 
-      return dates
+      while start < stop
+        result << start
+        start += 1
+      end
     end
+
+    result
   end
 
 

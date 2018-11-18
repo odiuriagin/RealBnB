@@ -26,12 +26,15 @@ class Booking < ApplicationRecord
 
 
   def conflict
-    start_date = self.check_in
-    end_date = self.check_out
-    (start_date..end_date).each do |date|
-      if self.property.book_dates.include?(date)
-        errors[:booking] << "These dates are not available"
+    day = self.check_in
+
+    while(day <= self.check_out)
+      if self.property.book_dates.include?(day)
+        errors[:these] << 'dates are not available'
+        return
       end
+
+      day += 1
     end
   end
 

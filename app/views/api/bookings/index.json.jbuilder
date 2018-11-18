@@ -4,7 +4,7 @@
     json.partial! 'api/bookings/booking', booking: booking
 
     json.property do
-      json.partial! 'api/properties/property', property: booking.property.id
+      json.partial! 'api/properties/property', property: booking.property
     end
 
     json.user do
