@@ -8,7 +8,7 @@ const IndexNav = (props) => {
       <Link to={'/'}><img src={window.logo_red} className="red-logo" /></Link>
       <ul className="main-nav-list">
         <li><Link to={'/'}>Become a host</Link></li>
-        <li><Link to={'/'}>Trips</Link></li>
+        <li><Link to={'/trips'}>Trips</Link></li>
         <li>
           <a href="#"><img className="user-photo" src={userLogo}></img></a>
           <ul className="main-nav-dropdown">

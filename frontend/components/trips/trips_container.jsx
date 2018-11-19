@@ -1,12 +1,19 @@
 import React from 'react';
-import Trips from './trips';
+import TripsIndex from './trips_index';
 import { connect } from 'react-redux';
-import { fetchBookings } from '../../actions/booking_actions';
+import { fetchBookings, deleteBooking } from '../../actions/booking_actions';
 
-const mapDsipatchToProps = (dispatch) => {
+const mapStateToProps = (state) => {
   return {
-    fetchBookings: () => dispatch(fetchBookings())
+    bookings: Object.keys(state.entities.bookings).map(id => state.entities.bookings[id])
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchBookings: () => dispatch(fetchBookings()),
+    deleteBooking: (id) => dispatch(deleteBooking(id)),
   }
 }
 
-export default connect(undefined, mapDsipatchToProps)(Trips);
+export default connect(mapStateToProps, mapDispatchToProps)(TripsIndex);

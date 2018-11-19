@@ -22,12 +22,10 @@ class Api::BookingsController < ApplicationController
     end
   end
 
-  def update
-
-  end
-
   def destroy
-
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    render :show
   end
 
   private

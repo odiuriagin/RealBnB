@@ -1,0 +1,39 @@
+.trips-property-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  width: 80%;
+  height: auto;
+}
+
+.trips-property-city {
+  font-size: 27px;
+  margin: 0 auto;
+  padding: 0 22%;
+  text-align: center;
+}
+
+.trips-property-list li {
+  margin: 15px;
+  list-style: none;
+  height: auto;
+  border: 1px solid lightgray;
+}
+
+.trips-property-list li img {
+  width: 328px;
+  height: 202px;
+}
+
+.trips-property-caption {
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.trips-property-dates {
+  margin: 5px;
+}
+
+.trips-property-caption a {
+  display: block;
+}

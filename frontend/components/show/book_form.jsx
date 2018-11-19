@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 import 'react-dates/initialize';
 import { DateRangePicker } from 'react-dates';
 import momentPropTypes from 'react-moment-proptypes';
@@ -56,8 +56,7 @@ class BookForm extends React.Component {
       num_people: this.state.num_people,
     }
 
-    this.props.createBooking(booking_info)
-    this.props.history.push('/trips')
+    this.props.createBooking(booking_info).then(() => this.props.history.push('/trips'))
 
   }
 
@@ -67,10 +66,15 @@ class BookForm extends React.Component {
 
   render() {
 
-    return (
+    const errors = this.props.errors.map( (err, i) => {
+      return(<li key={i}><span className="error-logo"><img src={window.error}/></span>{err}</li>)
+    });
 
+    return (
+      <div>
         <form className="book-form">
           <p className="book-form-price">${this.props.property.price}<span>   per night</span></p>
+          <p>{errors}</p>
           <p className="book-form-dates-text">Dates</p>
           <div className="date-picker">
             <DateRangePicker
@@ -92,7 +96,7 @@ class BookForm extends React.Component {
           <button className="book-form-submit" onClick={this.handleSubmit} >Book</button>
           <p className="no-charge">You won’t be charged yet</p>
         </form>
-
+      </div>
     );
 }
 };
