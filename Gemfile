@@ -32,7 +32,7 @@ gem "pry-rails"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'ez_download', git: 'https://github.com/OscarAlvarez8830/EZDownload.git'
-gem "mini_magick"
+# gem "mini_magick"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
