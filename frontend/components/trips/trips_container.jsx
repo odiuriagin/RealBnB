@@ -5,7 +5,8 @@ import { fetchBookings, deleteBooking } from '../../actions/booking_actions';
 
 const mapStateToProps = (state) => {
   return {
-    bookings: Object.keys(state.entities.bookings).map(id => state.entities.bookings[id])
+    bookings: Object.keys(state.entities.bookings).map(id => state.entities.bookings[id]),
+    properties: Object.keys(state.entities.properties).map(id => state.entities.properties[id]),
   }
 };
 

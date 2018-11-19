@@ -28,6 +28,7 @@ gem "jquery-rails"
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'rails_12factor'
+gem "pry-rails"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'ez_download', '~> 0.2.0'
@@ -48,7 +49,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
   gem "binding_of_caller"
-  gem "pry-rails"
   gem "annotate"
 end
 
