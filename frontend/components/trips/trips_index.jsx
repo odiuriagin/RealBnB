@@ -20,7 +20,7 @@ class TripsIndex extends React.Component {
     return (
       <>
         <IndexNavContainer />
-        <h2>{heading}</h2>
+        <h2 className="trips-index-heading">{heading}</h2>
         <ul className="trips-property-list">{bookings}</ul>
       </>
     )

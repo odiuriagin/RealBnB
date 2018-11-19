@@ -30,10 +30,32 @@
   padding: 15px;
 }
 
+.trips-property-description {
+  padding-bottom: 10px;
+}
+
 .trips-property-dates {
   margin: 5px;
 }
 
 .trips-property-caption a {
   display: block;
+  text-decoration: none;
+  padding: 15px;
+  border-top: 1px solid lightgray;
+  text-align: center;
+}
+
+.trips-property-caption p {
+  text-align: center;
+}
+
+.trips-property-caption a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #3b858a;
+}
+
+.trips-index-heading {
+  margin: 2% 0 0 12.1%;
 }
