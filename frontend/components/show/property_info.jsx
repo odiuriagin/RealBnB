@@ -1,6 +1,7 @@
 import React from 'react';
 import BookFormContainer from './book_form_container';
 import ShowPageMap from './show_page_map';
+import ShowPhotos from './show_photos';
 
 class PropertyInfo extends React.Component {
 
@@ -26,6 +27,7 @@ class PropertyInfo extends React.Component {
 
     return (
       <>
+      <ShowPhotos property={property}/>
       <div className="property-info">
         <div className="property-header">
           <p className="property-description-show">{property.description}</p>
