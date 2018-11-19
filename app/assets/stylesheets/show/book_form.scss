@@ -25,7 +25,7 @@
   margin-bottom: 20px;
   font-size: 15px;
   color: #757575;
-  padding: 8px 30px;
+  padding: 8px 15px;
   border: 1px solid #dbdbdb;
 }
 
@@ -103,7 +103,8 @@ div.DateInput.DateInput_1 {
 }
 
 .DateRangePickerInput {
-  width: 300px;
+  padding-right: 0 !important;
+  width: 303px;
   position: absolute;
   left: -40px;
 }

@@ -32,6 +32,10 @@ class User < ApplicationRecord
     through: :bookings,
     source: :property
 
+  has_many :reviews,
+    foreign_key: :user_id,
+    class_name: 'Review'
+
   has_one_attached :photo
 
   after_initialize :ensure_session_token

@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import BookForm from './book_form';
 import { fetchUser } from '../../actions/user_actions';
 import { fetchProperty } from '../../actions/properties_actions';
-import { createBooking } from '../../actions/booking_actions';
+import { createBooking, clearBookingErrors } from '../../actions/booking_actions';
+
 
 const mapStateToProps = (state = {}, ownProps) => {
   return {
@@ -17,6 +18,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchUser: (id) => dispatch(fetchUser(id)),
     fetchProperty: (id) => dispatch(fetchProperty(id)),
     createBooking: (booking) => dispatch(createBooking(booking)),
+    clearBookingErrors: () => dispatch(clearBookingErrors()),
   };
 };
 

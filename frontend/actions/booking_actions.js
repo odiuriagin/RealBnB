@@ -34,7 +34,7 @@ const receiveBookingErrors = (errors) => {
   }
 }
 
-const clearBookingErrors = () => {
+export const clearBookingErrors = () => {
   return {
     type: CLEAR_BOOKING_ERRORS,
   }

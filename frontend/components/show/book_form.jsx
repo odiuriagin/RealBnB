@@ -16,6 +16,7 @@ class BookForm extends React.Component {
       endDate: null,
       focusedInput: null,
       num_people: 1,
+      fireRedirect: false
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handlePeopleInput = this.handlePeopleInput.bind(this);
@@ -26,14 +27,8 @@ class BookForm extends React.Component {
     this.props.fetchProperty(this.props.propertyId)
   }
 
-  getToday() {
-      return new Date().toISOString().substr(0, 10);
-  }
-
-  getTomorrow() {
-      let currentDate = new Date();
-      currentDate.setDate(currentDate.getDate() + 1);
-      return currentDate.toISOString().substr(0, 10);
+  componentWillUnmount(oldProps) {
+     this.props.clearBookingErrors();
   }
 
   blockedDays(day) {
@@ -56,7 +51,8 @@ class BookForm extends React.Component {
       num_people: this.state.num_people,
     }
 
-    this.props.createBooking(booking_info).then(() => this.props.history.push('/trips'))
+    this.props.createBooking(booking_info).then( () => this.setState({ fireRedirect: true }));
+
 
   }
 
@@ -66,6 +62,8 @@ class BookForm extends React.Component {
 
   render() {
 
+    const { fireRedirect } = this.state;
+
     const errors = this.props.errors.map( (err, i) => {
       return(<li key={i}><span className="error-logo"><img src={window.error}/></span>{err}</li>)
     });
@@ -74,7 +72,7 @@ class BookForm extends React.Component {
       <div>
         <form className="book-form">
           <p className="book-form-price">${this.props.property.price}<span>   per night</span></p>
-          <p>{errors}</p>
+          <ul className="errors book-form-error">{errors}</ul>
           <p className="book-form-dates-text">Dates</p>
           <div className="date-picker">
             <DateRangePicker
@@ -82,9 +80,9 @@ class BookForm extends React.Component {
               startDateId="start-date"
               endDate={this.state.endDate}
               endDateId="end-date"
-              startDatePlaceholderText={this.getToday()}
+              startDatePlaceholderText="Check In"
               showClearDates={true}
-              endDatePlaceholderText={this.getTomorrow()}
+              endDatePlaceholderText="Check Out"
               onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
               isDayBlocked={day => this.blockedDays(day)}
               focusedInput={this.state.focusedInput}
@@ -96,6 +94,7 @@ class BookForm extends React.Component {
           <button className="book-form-submit" onClick={this.handleSubmit} >Book</button>
           <p className="no-charge">You won’t be charged yet</p>
         </form>
+        { fireRedirect && <Redirect to="/trips" /> }
       </div>
     );
 }

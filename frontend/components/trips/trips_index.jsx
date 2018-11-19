@@ -10,11 +10,11 @@ class TripsIndex extends React.Component {
 
 
   render() {
-    let heading = (this.props.bookings.length > 0) ? "Your trips" : "You do not have any trips";
 
+    let heading = (this.props.bookings.length > 0) ? "Your trips" : "You do not have any trips";
     const bookings = this.props.bookings.map(booking => {
       return (
-        <TripsIndexItem key={booking.id} booking={booking} deleteBooking={this.props.deleteBooking}/>
+        <TripsIndexItem key={booking.id} booking={booking} property={booking.property} deleteBooking={this.props.deleteBooking}/>
       );
     });
 

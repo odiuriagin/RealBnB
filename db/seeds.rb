@@ -480,10 +480,10 @@ property20 = Property.create!(
 )
 
 property1_photo1 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_1/1.jpeg')
-property1_photo2 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_1/1.jpg')
-property1_photo3 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_1/1.jpg')
-property1_photo4 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_1/1.jpg')
-property1_photo5 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_1/1.jpeg')
+property1_photo2 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_1/2.jpg')
+property1_photo3 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_1/3.jpg')
+property1_photo4 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_1/4.jpg')
+property1_photo5 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_1/5.jpeg')
 
 property2_photo1 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_2/1.jpg')
 property2_photo2 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_2/2.jpg')
