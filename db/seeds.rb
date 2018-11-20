@@ -600,11 +600,11 @@ property13_photo3 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/prope
 property13_photo4 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_13/4.jpeg')
 property13_photo5 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_13/5.jpeg')
 
-property14_photo1 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties14/1.jpg')
-property14_photo2 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties14/2.jpeg')
-property14_photo3 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties14/3.jpeg')
-property14_photo4 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties14/4.jpeg')
-property14_photo5 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties14/5.jpeg')
+property14_photo1 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_14/1.jpg')
+property14_photo2 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_14/2.jpeg')
+property14_photo3 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_14/3.jpeg')
+property14_photo4 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_14/4.jpeg')
+property14_photo5 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_14/5.jpeg')
 
 property15_photo1 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_15/1.jpeg')
 property15_photo2 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_15/2.jpeg')

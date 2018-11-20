@@ -8,6 +8,7 @@ class ReviewForm extends React.Component {
     super(props);
     this.state = {
       body: "",
+      reviewTracker: null,
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,10 +20,6 @@ class ReviewForm extends React.Component {
     this.props.fetchProperty(this.props.match.params.propertyId)
   }
 
-  componentDidUpdate() {
-    this.props.fetchProperty(this.props.match.params.propertyId)
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     const review_info = {
@@ -30,8 +27,9 @@ class ReviewForm extends React.Component {
       user_id: this.props.currentUserId,
       body: this.state.body,
     }
-    this.setState({body: ""})
+    this.setState({body: "", reviewTracker: !this.state.reviewTracker})
     this.props.createReview(review_info)
+    .then(this.props.fetchProperty(this.props.match.params.propertyId))
   }
 
   handleReviewInput(e) {
@@ -77,7 +75,6 @@ class ReviewForm extends React.Component {
         </section>
         <div className="review-section">
           <form className="review-form">
-            <p>Please type your review here:</p>
             <textarea onChange={this.handleReviewInput} value={this.state.body} placeholder="Your review goes here"></textarea>
             <p>Reviews will be visible both here and on the listing profile.</p>
             <button className="review-submit" onClick={this.handleSubmit}>Submit</button>

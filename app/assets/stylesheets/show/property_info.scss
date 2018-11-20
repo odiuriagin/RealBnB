@@ -14,6 +14,9 @@
 }
 
 .property-owner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   right: 9px;
   top: -5px;
@@ -21,6 +24,7 @@
 
 .property-owner p {
   font-size: 14px;
+  margin-top: 5px;
 }
 
 .property-header {
