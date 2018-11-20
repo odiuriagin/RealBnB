@@ -13,10 +13,12 @@ class PropertyInfo extends React.Component {
   render() {
     const { property } = this.props;
 
+    if (!property) return null;
 
-    if (!property) {
-      return null;
-    }
+    const host = this.props.users[property.host_id];
+    const hostPhoto = host ? host.userPhotoUrl : "#";
+    const hostName = host ? host.name : "";
+
 
     const wifi = property.wifi ? (<li><img src={window.wifi}></img>   Wifi</li>) : (<div></div>)
     const tv = property.cable_tv ? (<li><img src={window.tv}></img>   Cable TV</li>) : (<div></div>)
@@ -32,8 +34,8 @@ class PropertyInfo extends React.Component {
         <div className="property-header">
           <p className="property-description-show">{property.description}</p>
           <div className="property-owner">
-            <p className="property-owner-logo">Owner logo</p>
-            <p className="property-owner-name">{property.owner.name}</p>
+            <img className="property-owner-logo" src={hostPhoto}></img>
+            <p className="property-owner-name">{hostName}</p>
           </div>
           <p className="property-city">{property.city}</p>
         </div>

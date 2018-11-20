@@ -13,13 +13,15 @@ export const fetchBooking = (id) => (
   })
 )
 
-export const createBooking = (booking) => (
-  $.ajax({
-    method: "POST",
-    url: `api/properties/${booking.property_id}/bookings`,
-    data: { booking },
-  })
-)
+export const createBooking = (booking) => {
+  return (
+    $.ajax({
+      method: "POST",
+      url: `api/properties/${booking.property_id}/bookings`,
+      data: { booking },
+    })
+  );
+}
 
 export const deleteBooking = (id) => (
   $.ajax({

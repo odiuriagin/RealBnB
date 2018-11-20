@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 const IndexNav = (props) => {
-  let userLogo = props.currentUser.image_url ? props.currentUser.image_url : window.user_logo;
+  let userLogo = props.currentUser.userPhotoUrl ? props.currentUser.userPhotoUrl : window.user_logo;
   return (
     <div className="main-nav">
       <Link to={'/'}><img src={window.logo_red} className="red-logo" /></Link>

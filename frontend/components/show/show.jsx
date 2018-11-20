@@ -11,7 +11,6 @@ const Show = (props) => {
   return (
     <div>
       <IndexNavContainer />
-
       <PropertyInfoContainer propertyId={props.match.params.propertyId}/>
     </div>
   )

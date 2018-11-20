@@ -15,8 +15,12 @@
 
 .property-owner {
   position: absolute;
-  right: 26px;
-  top: 23px;
+  right: 9px;
+  top: -5px;
+}
+
+.property-owner p {
+  font-size: 14px;
 }
 
 .property-header {
@@ -55,4 +59,10 @@
   width: 50%;
   margin: 0 0 8% 10.5%;
   color: #535353;
+}
+
+img.property-owner-logo {
+  width: 60px;
+  height: 60px;
+  margin: 0 14%;
 }
