@@ -2,6 +2,7 @@ import React from 'react';
 import BookFormContainer from './book_form_container';
 import ShowPageMap from './show_page_map';
 import ShowPhotos from './show_photos';
+import ReviewItem from '../review/review_item';
 
 class PropertyInfo extends React.Component {
 
@@ -18,6 +19,18 @@ class PropertyInfo extends React.Component {
     const host = this.props.users[property.host_id];
     const hostPhoto = host ? host.userPhotoUrl : "#";
     const hostName = host ? host.name : "";
+
+    let reviews;
+    if (!property.reviews) {
+      reviews = <p>There are no reviews for this listing</p>
+    } else {
+      const review_array = Object.keys(property.reviews).map(id => property.reviews[id]).reverse();
+      reviews = review_array.map(review => {
+        return (
+          <ReviewItem key={review.id} review={review}/>
+        );
+      });
+    }
 
 
     const wifi = property.wifi ? (<li><img src={window.wifi}></img>   Wifi</li>) : (<div></div>)
@@ -53,6 +66,8 @@ class PropertyInfo extends React.Component {
         <BookFormContainer propertyId={this.props.propertyId}/>
         <ShowPageMap property={property}/>
         <p className="map-location-note">Exact location information is provided after a booking is confirmed.</p>
+        <h3 className="property-show-review-heading">Past reviews:</h3>
+        <ul className="property-show-review-list">{reviews}</ul>
       </div>
       </>
     );
