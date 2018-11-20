@@ -3,6 +3,7 @@ import TripsIndex from './trips_index';
 import { connect } from 'react-redux';
 import { fetchBookings, deleteBooking } from '../../actions/booking_actions';
 import { fetchProperties } from '../../actions/properties_actions';
+import {openModal} from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -15,6 +16,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchBookings: () => dispatch(fetchBookings()),
     fetchProperties: () => dispatch(fetchProperties()),
     deleteBooking: (id) => dispatch(deleteBooking(id)),
+    openModal: (type) => dispatch(openModal(type))
   }
 }
 

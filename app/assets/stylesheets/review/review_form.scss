@@ -1,0 +1,55 @@
+.review-form-container {
+  width: 70%;
+  margin: 3% auto;
+}
+
+.review-property-info {
+  width: 33%;
+  float: left;
+}
+
+.review-property-info p {
+  text-align: center;
+  padding: 10px 0;
+}
+
+p.review-hosted-by {
+  padding: 0;
+}
+
+h3.review-city {
+  padding: 0;
+  text-align: center;
+}
+
+img.review-property-photo {
+  width: 100%;
+  height: 20%;
+}
+
+.review-section {
+  width: 64%;
+  float: right;
+  border: 1px solid lightgray;
+}
+
+.review-section p {
+  margin-bottom: 5px;
+}
+
+.past-reviews-heading {
+  width: 100%;
+  background-color: #ecefed;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid lightgray;
+}
+
+.review-form {
+  padding: 15px 20px;
+}
+
+.review-form textarea {
+  width: 100%;
+  height: 80px;
+}

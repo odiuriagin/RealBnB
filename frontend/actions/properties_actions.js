@@ -29,11 +29,11 @@ export const fetchProperties = () => dispatch => (
 
 export const fetchProperty = id => dispatch => (
   PropertyAPIUtil.fetchProperty(id).then(
-    post => dispatch(receiveProperty(post))
+    property => dispatch(receiveProperty(property))
   )
 );
 
-export const createProperty = post => dispatch => (
+export const createProperty = property => dispatch => (
   PropertyAPIUtil.createProperty(property).then(
     property => dispatch(receiveProperty(property))
   )

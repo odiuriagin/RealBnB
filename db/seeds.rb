@@ -129,6 +129,48 @@ user20 = User.create!(
   password: "starwars"
 )
 
+user1_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/1.png')
+user2_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/2.png')
+user3_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/3.png')
+user4_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/4.png')
+user5_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/5.png')
+user6_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/6.png')
+user7_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/7.png')
+user8_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/8.png')
+user9_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/9.png')
+user10_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/10.png')
+user11_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/11.png')
+user12_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/12.png')
+user13_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/13.png')
+user14_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/14.png')
+user15_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/15.png')
+user16_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/16.png')
+user17_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/17.png')
+user18_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/18.png')
+user19_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/19.png')
+user20_avatar = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/20.png')
+
+user1.photo.attach(io: user1_avatar, filename: '1.png')
+user2.photo.attach(io: user1_avatar, filename: '2.png')
+user3.photo.attach(io: user1_avatar, filename: '3.png')
+user4.photo.attach(io: user1_avatar, filename: '4.png')
+user5.photo.attach(io: user1_avatar, filename: '5.png')
+user6.photo.attach(io: user1_avatar, filename: '6.png')
+user7.photo.attach(io: user1_avatar, filename: '7.png')
+user8.photo.attach(io: user1_avatar, filename: '8.png')
+user9.photo.attach(io: user1_avatar, filename: '9.png')
+user10.photo.attach(io: user1_avatar, filename: '10.png')
+user11.photo.attach(io: user1_avatar, filename: '11.png')
+user12.photo.attach(io: user1_avatar, filename: '12.png')
+user13.photo.attach(io: user1_avatar, filename: '13.png')
+user14.photo.attach(io: user1_avatar, filename: '14.png')
+user15.photo.attach(io: user1_avatar, filename: '15.png')
+user16.photo.attach(io: user1_avatar, filename: '16.png')
+user17.photo.attach(io: user1_avatar, filename: '17.png')
+user18.photo.attach(io: user1_avatar, filename: '18.png')
+user19.photo.attach(io: user1_avatar, filename: '19.png')
+user20.photo.attach(io: user1_avatar, filename: '20.png')
+
 Property.destroy_all
 
 property1 = Property.create!(
@@ -478,6 +520,7 @@ property20 = Property.create!(
   breakfast: true,
   body: "Modern apartment in boutique condominium with pool and parking spot. High end finishings, two TV, wi-fi and central AC: sophisticated designed 822 sqft one bedroom, two bathrooms apartment over looking the pool, in the chic condo building, just few minutes from everything in South Beach! "
 )
+
 
 property1_photo1 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_1/1.jpeg')
 property1_photo2 = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/property_photos/properties_1/2.jpg')
