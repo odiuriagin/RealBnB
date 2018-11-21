@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // TESTING STARTS
+  window.fetchProperties = fetchProperties;
   window.dispatch = store.dispatch;
   window.createBooking = createBooking;
   window.getState = store.getState;

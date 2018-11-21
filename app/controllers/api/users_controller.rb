@@ -11,8 +11,10 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    registered_user_photo = EzDownload.open('https://s3.amazonaws.com/realbnb-prod/user_avatars/10.png')
     if @user.save
       login(@user)
+      @user.photo.attach(io: registered_user_photo, filename: '10.png')
       render :show
     else
       render json: @user.errors.full_messages, status: 422

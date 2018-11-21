@@ -4,7 +4,7 @@ import moment from 'moment';
 const ReviewItem = ({ review }) => {
 
   let date = moment(review.created_at).format('DD-MMM-YYYY');
-  let time = moment(review.created_at).format('h:m A');
+  let time = moment(review.created_at).format('h:mm A');
 
   return (
     <li className="review-form-review-item">

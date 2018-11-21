@@ -90,7 +90,14 @@ class BookForm extends React.Component {
             />
           </div>
           <p className="book-form-text book-form-guests-text">Guests</p>
-          <input type="number" className="book-form-guests" defaultValue="1" min="1" max="6" onChange={this.handlePeopleInput}></input>
+          <select className="book-form-guests" onChange={this.handlePeopleInput} defaultValue="1">
+            <option value="1">1 guest</option>
+            <option value="2">2 guests</option>
+            <option value="3">3 guests</option>
+            <option value="4">4 guests</option>
+            <option value="5">5 guests</option>
+            <option value="6">6 guests</option>
+          </select>
           <button className="book-form-submit" onClick={this.handleSubmit} >Book</button>
           <p className="no-charge">You won’t be charged yet</p>
         </form>

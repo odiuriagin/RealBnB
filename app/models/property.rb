@@ -58,5 +58,12 @@ class Property < ApplicationRecord
     result
   end
 
+  def self.in_bounds(bounds)
+    self.where("latitude < ?", bounds[:northEast][:latitude])
+      .where("latitude > ?", bounds[:southWest][:latitude])
+      .where("longitude > ?", bounds[:southWest][:longitude])
+      .where("longitude < ?", bounds[:northEast][:longitude])
+  end
+
 
 end

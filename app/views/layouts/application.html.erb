@@ -6,6 +6,8 @@
     <%= csp_meta_tag %>
 
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCwmcETvz_rly4u5jB3FJx4WPkcj1EMvGM" %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCwmcETvz_rly4u5jB3FJx4WPkcj1EMvGM&libraries=places" %>
+    <script type="text/javascript" src="https://cdn.rawgit.com/googlemaps/v3-utility-library/master/markerwithlabel/src/markerwithlabel.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
 
@@ -26,6 +28,7 @@
       window.washer = "<%= image_url('amenities-washer.png')%>"
       window.wifi = "<%= image_url('amenities-wifi.png')%>"
       window.search_logo = "<%= image_url('search-logo.png')%>"
+      window.price_bubble = "<%= image_url('price_bubble.png')%>"
     </script>
   </head>
 

@@ -56,15 +56,26 @@
 }
 
 .book-form-guests-text {
-  top: -3px;
+  top: -5px;
 }
 
 .book-form-guests {
   position: relative;
-  top: 6px;
+  top: 0;
   left: 30px;
   width: 80%;
+  height: 10%;
   padding-left: 30px;
+  margin-bottom: 9%;
+  background-color: white;
+  border: 1px solid lightgray;
+  font-size: 16px;
+  color: #757575;
+  text-indent: 33px;
+}
+
+.select.paddingOffset {
+  padding-left: 3px;
 }
 
 .book-form-submit {

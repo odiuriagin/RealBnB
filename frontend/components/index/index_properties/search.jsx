@@ -4,7 +4,7 @@ import IndexProperties from './index_properties';
 
 const Search = ({properties, fetchProperties}) => {
   return (
-    <div>
+    <div className="index-container">
       <IndexMap properties={properties}/>
       <IndexProperties properties={properties} fetchProperties={fetchProperties}/>
     </div>

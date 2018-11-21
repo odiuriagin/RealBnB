@@ -1,24 +1,27 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import MarkerManager from '../../../util/marker_manager';
 
 class IndexMap extends React.Component {
 
   componentDidMount() {
       const mapOptions = {
-        center: { lat: 37.773972, lng: -122.431297 },
-        zoom: 15
+        center: { lat: 40.758888, lng: -73.953621 },
+        zoom: 12
       };
 
       this.map = new google.maps.Map(this.mapNode, mapOptions);
-      this.marker = new google.maps.Circle({
-        strokeColor: '#357b88',
-        strokeOpacity: 0.8,
-        strokeWeight: 1,
-        fillColor: '#8ed8cf',
-        fillOpacity: 0.55,
-        map: this.map,
-        center: { lat: 37.773972, lng: -122.431297 },
-        radius: 150
-      });
+      this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+      this.MarkerManager.updateMarkers(this.props.properties);
+
+    }
+
+    componentDidUpdate() {
+      this.MarkerManager.updateMarkers(this.props.properties);
+    }
+
+    handleMarkerClick(property) {
+      this.props.history.push(`properties/${property.id}`);
     }
 
     render() {
@@ -30,4 +33,4 @@ class IndexMap extends React.Component {
     }
 }
 
-export default IndexMap;
+export default withRouter(IndexMap);
