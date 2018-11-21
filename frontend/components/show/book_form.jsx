@@ -69,7 +69,7 @@ class BookForm extends React.Component {
     });
 
     return (
-      <div>
+      <div className="book-form-container">
         <form className="book-form">
           <p className="book-form-price">${this.props.property.price}<span>   per night</span></p>
           <ul className="errors book-form-error">{errors}</ul>

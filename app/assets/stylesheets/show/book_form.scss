@@ -1,3 +1,8 @@
+.book-form-container {
+  position: sticky;
+  top: 10px;
+}
+
 .book-form {
   width: 377px;
   height: 390px;
@@ -90,6 +95,12 @@
 
 #start-date {
   border: none;
+}
+
+#start-date:focus, #end-date:focus {
+  color: #007a87;
+  background-color: #99ede6;
+  padding: 0;
 }
 
 .DateRangePicker {
