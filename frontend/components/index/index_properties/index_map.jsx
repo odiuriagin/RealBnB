@@ -14,6 +14,21 @@ class IndexMap extends React.Component {
       this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
       this.MarkerManager.updateMarkers(this.props.properties);
 
+      var defaultBounds = new google.maps.LatLngBounds(
+        new google.maps.LatLng(40.758888, -73.953621),
+        new google.maps.LatLng(40.858888, -73.853621)
+      );
+
+
+      var input = document.getElementById('nav-search-field');
+      var options = {
+        bounds: defaultBounds,
+        types: ['(cities)'],
+      };
+
+      let autocomplete = new google.maps.places.Autocomplete(input, options);
+
+
     }
 
     componentDidUpdate() {

@@ -16,7 +16,7 @@ class IndexProperties extends React.Component {
     });
 
     return (
-      <div>
+      <div className="index-properties">
         <ul className="properties-list">{properties}</ul>
       </div>
     );

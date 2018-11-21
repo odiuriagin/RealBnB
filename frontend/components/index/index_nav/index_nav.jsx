@@ -3,10 +3,14 @@ import { Link, NavLink } from 'react-router-dom';
 
 const IndexNav = (props) => {
   let userLogo = props.currentUser.userPhotoUrl ? props.currentUser.userPhotoUrl : window.user_logo;
+
+
+
+
   return (
     <div className="main-nav">
       <Link to={'/'}><img src={window.logo_red} className="red-logo" /></Link>
-      <input className="nav-search-field" type="text" placeholder='Try "Miami"'></input>
+      <input id="nav-search-field" type="text" placeholder='Try "Miami"'></input>
       <ul className="main-nav-list">
         <li><Link to={'/'}>Become a host</Link></li>
         <li><Link to={'/trips'}>Trips</Link></li>

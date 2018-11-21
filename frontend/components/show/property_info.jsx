@@ -62,7 +62,7 @@ class PropertyInfo extends React.Component {
           {breakfast}
         </ul>
       </div>
-      <div>
+      <div className="clearfix">
         <BookFormContainer propertyId={this.props.propertyId}/>
         <ShowPageMap property={property}/>
         <p className="map-location-note">Exact location information is provided after a booking is confirmed.</p>
