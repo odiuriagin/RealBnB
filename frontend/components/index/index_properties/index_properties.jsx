@@ -1,5 +1,6 @@
 import React from 'react';
 import IndexPropertiesItem from './index_properties_item';
+import IndexMap from './index_map';
 
 class IndexProperties extends React.Component {
 
