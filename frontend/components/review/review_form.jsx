@@ -66,13 +66,11 @@ class ReviewForm extends React.Component {
     const hostPhoto = host ? host.userPhotoUrl : "#";
     const hostName = host ? host.name : "";
     let reviews;
-    let reviewsNum;
 
     if (!property.reviews) {
       reviews = <p>There are no reviews for this listing</p>
     } else {
       const review_array = Object.keys(property.reviews).map(id => property.reviews[id]).reverse();
-      reviewsNum = review_array.length;
       reviews = review_array.map(review => {
         return (
           <ReviewItem key={review.id} review={review}
@@ -107,7 +105,7 @@ class ReviewForm extends React.Component {
                 <Ratings.Widget />
                 <Ratings.Widget />
                 <Ratings.Widget />
-              </Ratings><span>({reviewsNum} Reviews)</span>
+              </Ratings><span>({property.reviewsNum} Reviews)</span>
           </div>
           <img className="review-property-photo" src={property.photoUrls[0]} />
           <h3 className="review-city">{property.city}, {property.state}</h3>

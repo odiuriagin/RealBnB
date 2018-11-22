@@ -2,6 +2,7 @@ json.partial! '/api/properties/property', property: @property
 json.bookedDates @property.book_dates
 json.photoUrls @property.photos.map { |photo| url_for(photo) }
 json.averageRating @property.average_rating
+json.reviewsNum @property.num_reviews
 
 json.owner do
    json.extract! @property.host, :id, :name

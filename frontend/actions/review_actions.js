@@ -17,10 +17,12 @@ const receiveReview = (review) => {
   }
 }
 
-const removeReview = (id) => {
+const removeReview = (id, data) => {
+  debugger
   return {
     type: DELETE_REVIEW,
     reviewId: id,
+    data
   }
 }
 
@@ -37,7 +39,7 @@ export const createReview = (review) => dispatch => {
 };
 
 export const deleteReview = (id) => dispatch => {
-  return ReviewApiUtil.deleteReview(id).then( () => {
-    return dispatch(removeReview(id))
+  return ReviewApiUtil.deleteReview(id).then( (data) => {
+    return dispatch(removeReview(id, data))
   });
 }

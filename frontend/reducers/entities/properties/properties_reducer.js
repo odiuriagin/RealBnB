@@ -1,5 +1,6 @@
 import { merge } from 'lodash';
 import { RECEIVE_ALL_PROPERTIES, RECEIVE_PROPERTY, REMOVE_PROPERTY } from '../../../actions/properties_actions';
+import { DELETE_REVIEW } from '../../../actions/review_actions';
 
 
 const propertiesReducer = (state = {}, action) => {
@@ -14,6 +15,9 @@ const propertiesReducer = (state = {}, action) => {
       newState = merge({}, state);
       delete newState[action.id];
       return newState;
+    case DELETE_REVIEW:
+    debugger
+      return merge({}, state, {[action.data.id]: action.data})
     default:
       return state;
   }
