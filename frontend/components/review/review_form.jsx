@@ -56,7 +56,7 @@ class ReviewForm extends React.Component {
       const review_array = Object.keys(property.reviews).map(id => property.reviews[id]).reverse();
       reviews = review_array.map(review => {
         return (
-          <ReviewItem key={review.id} review={review}/>
+          <ReviewItem key={review.id} review={review} deleteReview={this.props.deleteReview} currentUserId={this.props.currentUserId}/>
         );
       });
     }

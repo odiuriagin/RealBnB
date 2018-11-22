@@ -1,6 +1,6 @@
 import React from 'react';
 import { fetchProperty } from '../../actions/properties_actions';
-import { fetchReviews, createReview } from '../../actions/review_actions';
+import { fetchReviews, createReview, deleteReview } from '../../actions/review_actions';
 import { connect } from 'react-redux';
 import ReviewForm from './review_form';
 
@@ -19,6 +19,7 @@ import ReviewForm from './review_form';
       fetchProperty: (id) => dispatch(fetchProperty(id)),
       fetchReviews: () => dispatch(fetchReviews()),
       createReview: (review) => dispatch(createReview(review)),
+      deleteReview: (id) => dispatch(deleteReview(id)),
     };
   };
 

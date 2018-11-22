@@ -4,7 +4,7 @@ export const fetchReviews = () => (
     method:'GET',
     url: '/api/reviews',
   })
-)
+);
 
 export const createReview = (review) => {
   return (
@@ -14,4 +14,13 @@ export const createReview = (review) => {
       data: { review }
     })
   );
-}
+};
+
+export const deleteReview = (id) => {
+  return (
+    $.ajax({
+      method: 'DELETE',
+      url: `/api/reviews/${id}`
+    })
+  )
+};

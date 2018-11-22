@@ -1,24 +1,63 @@
 import React from 'react';
 import moment from 'moment';
 
-const ReviewItem = ({ review }) => {
+class ReviewItem extends React.Component {
 
-  let date = moment(review.created_at).format('DD-MMM-YYYY');
-  let time = moment(review.created_at).format('h:mm A');
+  constructor(props) {
+    super(props)
+    this.state = {
+      review: props.review,
+      reviewTracker: null,
+    }
 
-  return (
-    <li className="review-form-review-item">
-      <div className="review-form-review-user-container">
-        <img className="review-form-review-image" src={review.authorPhotoUrl}></img>
-        <p className="review-form-review-user-name">{review.author.name}</p>
-      </div>
-      <div className="review-form-review-body-container">
-        <p className="review-form-review-body">{review.body}</p>
-        <p className="review-form-review-date">{date} at {time}</p>
-      </div>
-    </li>
-  )
+    this.handleDelete = this.handleDelete.bind(this);
+  }
 
+
+  handleDelete(id) {
+    this.props.deleteReview(id)
+      .then(this.setState({
+        reviewTracker: !this.state.reviewTracker,
+        review: null,
+        })
+      );
+  }
+
+
+  render() {
+
+
+    let date = moment(this.props.review.created_at).format('DD-MMM-YYYY');
+    let time = moment(this.props.review.created_at).format('h:mm A');
+    let deleteLink;
+    if (this.props.review.user_id === this.props.currentUserId) {
+      deleteLink = (
+        <a className="review-delete-link" onClick={() => this.handleDelete(this.state.review.id)}>Delete Your Review</a>
+      )
+    } else {
+      deleteLink = <div></div>
+    }
+
+    if (!this.state.review) {
+      return <div></div>
+    }
+
+    return (
+      <li className="review-form-review-item">
+        <div className="review-form-review-user-container">
+          <img className="review-form-review-image" src={this.state.review.authorPhotoUrl}></img>
+          <p className="review-form-review-user-name">{this.state.review.author.name}</p>
+        </div>
+        <div className="review-form-review-body-container">
+          <p className="review-form-review-body">{this.state.review.body}</p>
+          <p className="review-form-review-date">{date} at {time}</p>
+          {deleteLink}
+        </div>
+      </li>
+    )
+  }
 }
+
+
 
 export default ReviewItem;

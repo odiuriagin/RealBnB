@@ -20,6 +20,7 @@ class IndexMap extends React.Component {
       this.registerListeners();
       this.MarkerManager.updateMarkers(this.props.properties);
 
+
       var defaultBounds = new google.maps.LatLngBounds(
         new google.maps.LatLng(40.758888, -73.953621),
         new google.maps.LatLng(40.858888, -73.853621)
@@ -69,9 +70,12 @@ class IndexMap extends React.Component {
 
     render() {
       return (
+        <>
+        <p className="index-num-homes">{this.props.properties.length} homes</p>
         <div className="index-map-container">
           <div className="index-map" ref={ map => this.mapNode = map }></div>
         </div>
+        </>
       )
     }
 }
