@@ -16,7 +16,6 @@ const propertiesReducer = (state = {}, action) => {
       delete newState[action.id];
       return newState;
     case DELETE_REVIEW:
-    debugger
       return merge({}, state, {[action.data.id]: action.data})
     default:
       return state;

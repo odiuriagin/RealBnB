@@ -147,9 +147,18 @@ img.review-form-review-image {
   margin: 10px 0;
 }
 
+.review-property-reviews-num {
+  font-size: 13px;
+  font-weight: 700;
+}
+
 .review-delete-link:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.review-form-review-body-container {
+  width: 66%;
 }
 
 div.review-form-review-body-container div.widget-ratings {

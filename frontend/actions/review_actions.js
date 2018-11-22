@@ -18,7 +18,6 @@ const receiveReview = (review) => {
 }
 
 const removeReview = (id, data) => {
-  debugger
   return {
     type: DELETE_REVIEW,
     reviewId: id,

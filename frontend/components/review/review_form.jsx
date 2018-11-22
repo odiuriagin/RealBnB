@@ -105,7 +105,7 @@ class ReviewForm extends React.Component {
                 <Ratings.Widget />
                 <Ratings.Widget />
                 <Ratings.Widget />
-              </Ratings><span>({property.reviewsNum} Reviews)</span>
+              </Ratings><span className="review-property-reviews-num">    ({property.reviewsNum} Reviews)</span>
           </div>
           <img className="review-property-photo" src={property.photoUrls[0]} />
           <h3 className="review-city">{property.city}, {property.state}</h3>

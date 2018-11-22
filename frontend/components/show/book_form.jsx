@@ -5,6 +5,7 @@ import { DateRangePicker } from 'react-dates';
 import momentPropTypes from 'react-moment-proptypes';
 import moment from 'moment';
 import 'react-dates/lib/css/_datepicker.css';
+import Ratings from 'react-ratings-declarative';
 
 
 class BookForm extends React.Component {
@@ -71,7 +72,21 @@ class BookForm extends React.Component {
     return (
       <div className="book-form-container clearfix">
         <form className="book-form">
-          <p className="book-form-price">${this.props.property.price}<span>   per night</span></p>
+          <div className="book-form-price">
+            <p>${this.props.property.price}<span>   per night</span></p>
+            <Ratings
+              rating={this.props.property.averageRating}
+              widgetDimensions="14px"
+              widgetSpacings="2px"
+              widgetRatedColors="#008489"
+            >
+              <Ratings.Widget />
+              <Ratings.Widget />
+              <Ratings.Widget />
+              <Ratings.Widget />
+              <Ratings.Widget />
+            </Ratings><span className="book-form-ratings-num"> {this.props.property.reviewsNum}</span>
+          </div>
           <ul className="errors book-form-error">{errors}</ul>
           <p className="book-form-dates-text">Dates</p>
           <div className="date-picker">
