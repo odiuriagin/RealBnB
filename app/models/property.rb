@@ -65,5 +65,33 @@ class Property < ApplicationRecord
       .where("latitude < ?", bounds[:northEast][:longitude])
   end
 
+  def average_rating
+    result = 0
+    if !self.reviews || self.reviews.length == 0
+      return result
+    end
+    self.reviews.each do |review|
+      if !review.value
+        return result
+      end
+      result += review.value
+    end
+    return result.fdiv(self.reviews.length)
+  end
+
+  def num_reviews
+    result = 0
+    if !self.reviews || self.reviews.length == 0
+      return result
+    end
+    self.reviews.each do |review|
+      if !review.value
+        return result
+      end
+      result += 1
+    end
+    return result
+  end
+
 
 end
