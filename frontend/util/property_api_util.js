@@ -1,8 +1,9 @@
 
-export const fetchProperties = () => (
+export const fetchProperties = (filters) => (
   $.ajax({
     method: 'GET',
     url: 'api/properties',
+    data: {filters}
   })
 );
 

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import IndexProperties from './index_properties';
 import { fetchProperties } from '../../../actions/properties_actions';
+import { updateFilter } from '../../../actions/filter_actions';
 import Search from './search';
 
 const mapStateToProps = state => ({
@@ -8,7 +9,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchProperties: () => dispatch(fetchProperties()),
+  updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

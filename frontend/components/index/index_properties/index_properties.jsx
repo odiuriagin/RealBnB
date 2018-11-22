@@ -4,10 +4,6 @@ import IndexMap from './index_map';
 
 class IndexProperties extends React.Component {
 
-  componentDidMount() {
-    this.props.fetchProperties();
-  }
-
   render() {
     const properties = this.props.properties.map(property => {
       return (

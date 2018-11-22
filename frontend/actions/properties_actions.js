@@ -21,8 +21,8 @@ const removeProperty = id => ({
   id
 });
 
-export const fetchProperties = () => dispatch => (
-  PropertyAPIUtil.fetchProperties().then(
+export const fetchProperties = (filters) => dispatch => (
+  PropertyAPIUtil.fetchProperties(filters).then(
     properties => dispatch(receiveAllProperties(properties))
   )
 );
