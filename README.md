@@ -1,24 +1,10 @@
-# README
+# ![](https://cdn.iconscout.com/icon/free/png-48/airbnb-11-722672.png "RealBnb") RealBnb
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+RealBnb is a full-stack web application inspired by AirBnb that allows users to search, book and review houses around the world. It utilizes Rails API connected to a PostgreSQL database, serving data to React/Redux frontend.
 
-Things you may want to cover:
+This application is hosted on Heroku and has photos served from AWS. It also uses Google Places API to obtain city or country coordinates from a search bar.
 
-* Ruby version
 
-* System dependencies
+[LIVE LINK](https://realbnb.herokuapp.com/ "RealBnB")
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+---
