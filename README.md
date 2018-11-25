@@ -67,7 +67,7 @@ This application is hosted on Heroku and has photos served from AWS. It also use
     }
 ```
 
-<p style="text-decoration: underline">Bookings</p>
+<p style="text-decoration: underline"><b>Bookings</b></p>
 <p>Logged in user can book a listing from a show page. User will need to select dates and a number of guests from booking form. User can see which dates are available at the time of booking. To achieve this, on backend I created a method to get all booked dates for a listing with help of ActiveRecord relation.</p>
 
 ```
