@@ -1,0 +1,67 @@
+.property-form-container {
+    width: 50%;
+    border: 1px solid lightgray;
+    border-top: none;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.property-form-amenities {
+    display: flex;
+}
+
+.amenities-header {
+    margin-bottom: 20px;
+}
+
+.property-form-container input[type="checkbox"] {
+    width: 50%;
+    height: 23px;
+    margin-left: 12px;
+}
+
+.property-form-container h2, p {
+    margin-bottom: 12px;
+}
+
+.property-form-city-state-container, .property-form-zip-price-container {
+    display: flex;
+  }
+  
+  .property-form-city-container, .property-form-state-container, .property-form-zip-container, .property-form-price-container {
+      width: 70%;
+  }
+  
+.property-form input, .property-form-state-select {
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    height: 48px;
+    font-size: 15px;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ebebeb;
+    width: 100%;
+}
+
+.property-form-submit {
+    height: 48px;
+    padding: 20px;
+    font-size: 15px;
+    text-align: center;
+    line-height: 0.1em;
+    background-color: rgb(255, 90, 95);
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ebebeb;
+    width: 100%;
+    margin: 20px 0;
+}  
+    
+input.property-form-city, input.property-form-state, input.property-form-zip, input.property-form-price {
+    width: 95%;
+}
+
+
+

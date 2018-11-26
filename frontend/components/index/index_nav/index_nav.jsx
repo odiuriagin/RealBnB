@@ -12,7 +12,7 @@ const IndexNav = (props) => {
       <Link to={'/'}><img src={window.logo_red} className="red-logo" /></Link>
       <input id="nav-search-field" type="text" placeholder='Try "Miami"'></input>
       <ul className="main-nav-list">
-        <li><Link to={'/'}>Become a host</Link></li>
+        <li><Link to={'/new'}>Become a host</Link></li>
         <li><Link to={'/trips'}>Trips</Link></li>
         <li>
           <a href="#"><img className="user-photo" src={userLogo}></img></a>

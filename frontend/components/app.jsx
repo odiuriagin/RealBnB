@@ -7,6 +7,7 @@ import Show from './show/show';
 import TripsContainer from './trips/trips_container';
 import { ProtectedRoute, AuthRoute } from '../util/route_util';
 import ReviewFormContainer from './review/review_form_container';
+import PropertyFormContainer from './property/property_form_container';
 
 const App = () => (
   <div>
@@ -17,6 +18,7 @@ const App = () => (
       <ProtectedRoute exact path="/properties/:propertyId" component={ Show } />
       <ProtectedRoute exact path="/trips" component={TripsContainer} />
       <ProtectedRoute exact path="/:propertyId/review" component={ReviewFormContainer} />
+      <ProtectedRoute exact path="/new" component={PropertyFormContainer} />
     </Switch>
   </div>
 )
