@@ -26,7 +26,6 @@ class Property < ApplicationRecord
 
   validates :city, :state, :zip, :address, :description, :host_id,
             :price, :longitude, :latitude, presence: true
-  validates :address, uniqueness: true
 
   belongs_to :host,
     foreign_key: :host_id,

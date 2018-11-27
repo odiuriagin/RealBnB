@@ -21,6 +21,8 @@ class PropertyForm extends React.Component {
             latitude: null,
             longitude: null
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleCheckbox = this.handleCheckbox.bind(this);
     }
 
     handleChange(field) {
@@ -29,12 +31,44 @@ class PropertyForm extends React.Component {
           });
     }
 
+    handleCheckbox(field) {
+        return (e) => this.setState({
+            [field]: !this.state.field
+        });
+    };
+
     handleSubmit(e) {
         e.preventDefault();
-
-    }
+        let geocoder = new google.maps.Geocoder();
+        let address = `${this.state.address}, ${this.state.city}, ${this.state.state}, ${this.state.zip}`;
+        geocoder.geocode({ 'address': address }, (results, status) => {
+            this.setState( {latitude: results[0].geometry.location.lng(),
+                            longitude: results[0].geometry.location.lat() });
+            let property_info = {
+                host_id: parseInt(this.props.currentUserId),
+                description: this.state.description,
+                address: this.state.address,
+                city: this.state.city,
+                state: this.state.state,
+                zip: parseInt(this.state.zip),
+                price: parseInt(this.state.price),
+                wifi: this.state.wifi,
+                cable_tv: this.state.cable_tv,
+                washer: this.state.washer,
+                kitchen: this.state.kitchen,
+                breakfast: this.state.breakfast,
+                body: this.state.body,
+                latitude: parseFloat(this.state.latitude),
+                longitude: parseFloat(this.state.longitude),
+            }
+            this.props.createProperty(property_info);
+        })
+    };
 
     render() {
+
+
+
         return (
             <>
                 <IndexNavContainer />
@@ -120,19 +154,19 @@ class PropertyForm extends React.Component {
                         <p className="amenities-header">Please select amenities:</p>
                         <div className="property-form-amenities">
                             <label htmlFor="wifi">Wifi</label>
-                            <input type="checkbox"  id="wifi" value={this.state.wifi} onChange={this.handleChange("wifi")}/>
+                            <input type="checkbox"  id="wifi" value={this.state.wifi} onClick={this.handleCheckbox("wifi")}/>
                             <label htmlFor="cable_tv">Cable</label>
-                            <input type="checkbox"  id="cable_tv" value={this.state.cable_tv} onChange={this.handleChange("cable_tv")}/>
+                            <input type="checkbox"  id="cable_tv" value={this.state.cable_tv} onClick={this.handleCheckbox("cable_tv")}/>
                             <label htmlFor="washer">Washer</label>
-                            <input type="checkbox"  id="washer" value={this.state.washer} onChange={this.handleChange("washer")}/>
+                            <input type="checkbox"  id="washer" value={this.state.washer} onClick={this.handleCheckbox("washer")}/>
                             <label htmlFor="kitchen">Kitchen</label>
-                            <input type="checkbox"  id="kitchen" value={this.state.kitchen} onChange={this.handleChange("kitchen")}/>
+                            <input type="checkbox"  id="kitchen" value={this.state.kitchen} onClick={this.handleCheckbox("kitchen")}/>
                             <label htmlFor="breakfast">Breakfast</label>
-                            <input type="checkbox"  id="breakfast" value={this.state.breakfast} onChange={this.handleChange("breakfast")}/>
+                            <input type="checkbox"  id="breakfast" value={this.state.breakfast} onClick={this.handleCheckbox("breakfast")}/>
                         </div>
                         <p>Please give a breif description of your property:</p>
                         <textarea cols="111" rows="10" value={this.state.body} onChange={this.handleChange("body")}></textarea>
-                        <button className="property-form-submit">Submit your listing</button>
+                        <button className="property-form-submit" onClick={this.handleSubmit}>Submit your listing</button>
                     </form>
 
                 </div>

@@ -51,10 +51,7 @@ class BookForm extends React.Component {
       check_out: this.state.endDate._d,
       num_people: this.state.num_people,
     }
-
     this.props.createBooking(booking_info).then( () => this.setState({ fireRedirect: true }));
-
-
   }
 
   handlePeopleInput(e) {
@@ -73,7 +70,7 @@ class BookForm extends React.Component {
       <div className="book-form-container clearfix">
         <form className="book-form">
           <div className="book-form-price">
-            <p>${this.props.property.price}<span>   per night</span></p>
+            <p className="book-form-price-p">${this.props.property.price}<span>   per night</span></p>
             <Ratings
               rating={this.props.property.averageRating}
               widgetDimensions="14px"

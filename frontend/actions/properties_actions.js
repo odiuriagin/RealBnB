@@ -4,6 +4,8 @@ import * as PropertyAPIUtil from '../util/property_api_util';
 export const RECEIVE_ALL_PROPERTIES = 'RECEIVE_ALL_PROPERTIES';
 export const RECEIVE_PROPERTY = 'RECEIVE_PROPERTY';
 export const REMOVE_PROPERTY = 'REMOVE_PROPERTY';
+export const RECEIVE_PROPERTY_ERRORS = 'RECEIVE_PROPERTY_ERRORS';
+export const CLEAR_PROPERTY_ERRORS = 'CLEAR_PROPERTY_ERRORS';
 
 
 const receiveAllProperties = properties => ({
@@ -21,6 +23,19 @@ const removeProperty = id => ({
   id
 });
 
+const receivePropertyErrors = (errors) => {
+  return {
+    type: RECEIVE_PROPERTY_ERRORS,
+    errors,
+  };
+};
+
+const clearPropertyErrors = () => {
+  return {
+    type: CLEAR_PROPERTY_ERRORS,
+  };
+};
+
 export const fetchProperties = (filters) => dispatch => (
   PropertyAPIUtil.fetchProperties(filters).then(
     properties => dispatch(receiveAllProperties(properties))
@@ -34,9 +49,11 @@ export const fetchProperty = id => dispatch => (
 );
 
 export const createProperty = property => dispatch => (
-  PropertyAPIUtil.createProperty(property).then(
-    property => dispatch(receiveProperty(property))
-  )
+  PropertyAPIUtil.createProperty(property).then(property => (
+    dispatch(receiveProperty(property))
+  ), err => (
+    dispatch(receivePropertyErrors(err.responseJSON))
+  ))
 );
 
 export const updatePost = property => dispatch => (

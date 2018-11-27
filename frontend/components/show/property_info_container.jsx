@@ -11,6 +11,7 @@ const mapStateToProps = (state = {}, ownProps) => {
     property: state.entities.properties[ownProps.propertyId],
     users: state.entities.users,
     currentUserId: state.session.currentUserId,
+    errors: state.errors.property,
   }
 };
 

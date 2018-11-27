@@ -17,7 +17,7 @@ class Api::PropertiesController < ApplicationController
     if @property.save
       render :show
     else
-      render json: ["Fields can't be empty"], status: 422
+      render json: ["Please fill out all fields"], status: 422
     end
   end
 

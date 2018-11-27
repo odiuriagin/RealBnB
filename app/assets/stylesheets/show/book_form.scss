@@ -41,18 +41,12 @@
   position: relative;
 }
 
-.book-form-dates-text {
+.book-form-dates-text, .book-form-text {
   font-size: 14px;
   position: relative;
   top: 20px;
   left: 32px;
-}
-
-.book-form-text {
-  font-size: 14px;
-  position: relative;
-  top: 20px;
-  left: 32px;
+  margin: 0;
 }
 
 .book-form-guests-text {
@@ -111,6 +105,10 @@ span.book-form-ratings-num {
 
 #start-date {
   border: none;
+}
+
+.book-form-price-p {
+  margin: 0;
 }
 
 #start-date:focus, #end-date:focus {
