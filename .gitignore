@@ -24,7 +24,7 @@ bundle.js.map
 
 /public/assets
 .byebug_history
-.DS_store
+.DS_Store
 
 
 # Ignore master key for decrypting credentials and more.

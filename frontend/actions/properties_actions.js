@@ -10,12 +10,12 @@ export const CLEAR_PROPERTY_ERRORS = 'CLEAR_PROPERTY_ERRORS';
 
 const receiveAllProperties = properties => ({
   type: RECEIVE_ALL_PROPERTIES,
-  properties
+  properties,
 });
 
 const receiveProperty = property => ({
   type: RECEIVE_PROPERTY,
-  property
+  property,
 });
 
 const removeProperty = id => ({
