@@ -14,35 +14,37 @@ class IndexMap extends React.Component {
 
   componentDidMount() {
 
+    
+    this.map = new google.maps.Map(this.mapNode, mapOptions);
+    this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+    this.registerListeners();
+    this.MarkerManager.updateMarkers(this.props.properties);
+    
+    if (this.props.location.state) {
+      let place = this.props.location.state.place;
+      this.map.setCenter(place.geometry.location);
+    }
 
-      this.map = new google.maps.Map(this.mapNode, mapOptions);
-      this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
-      this.registerListeners();
-      this.MarkerManager.updateMarkers(this.props.properties);
+    let defaultBounds = new google.maps.LatLngBounds(
+      new google.maps.LatLng(40.758888, -73.953621),
+      new google.maps.LatLng(40.858888, -73.853621)
+    );
 
+    let input = document.getElementById('nav-search-field');
+    let options = {
+      bounds: defaultBounds,
+      types: ['(cities)'],
+    };
 
-      var defaultBounds = new google.maps.LatLngBounds(
-        new google.maps.LatLng(40.758888, -73.953621),
-        new google.maps.LatLng(40.858888, -73.853621)
-      );
+    let autocomplete = new google.maps.places.Autocomplete(input, options);
 
-      var input = document.getElementById('nav-search-field');
-      var options = {
-        bounds: defaultBounds,
-        types: ['(cities)'],
-      };
-
-      let autocomplete = new google.maps.places.Autocomplete(input, options);
-
-      autocomplete.bindTo('bounds', this.map);
-
-      autocomplete.addListener('place_changed', () => {
-        var place = autocomplete.getPlace();
-        if (!place.geometry) {
-          return;
-        } else {
-          this.map.setCenter(place.geometry.location);
-        }
+    autocomplete.addListener('place_changed', () => {
+      let place = autocomplete.getPlace();
+      if (!place.geometry) {
+        return;
+      } else {
+        this.map.setCenter(place.geometry.location);
+      }
     });
 
     }
@@ -71,10 +73,10 @@ class IndexMap extends React.Component {
     render() {
       return (
         <>
-        <p className="index-num-homes">{this.props.properties.length} homes</p>
-        <div className="index-map-container">
-          <div className="index-map" ref={ map => this.mapNode = map }></div>
-        </div>
+          <p className="index-num-homes">{this.props.properties.length} homes</p>
+          <div className="index-map-container">
+            <div className="index-map" ref={ map => this.mapNode = map }></div>
+          </div>
         </>
       )
     }
