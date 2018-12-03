@@ -2,7 +2,7 @@
 
 RealBnb is a full-stack web application inspired by AirBnb that allows users to search, book and review houses around the world. It utilizes Rails API connected to a PostgreSQL database, serving data to React/Redux frontend.
 
-This application is hosted on Heroku and has photos served from AWS. It also uses Google Places API to obtain city or country coordinates with user's search.
+This application is hosted on Heroku and has photos served from AWS. It also uses Google Places API to obtain city or country coordinates from a user's search.
 
 
 [LIVE LINK](https://realbnb.herokuapp.com/ "RealBnB")
@@ -11,48 +11,9 @@ This application is hosted on Heroku and has photos served from AWS. It also use
 
 <h3>Key Features</h3>
 
-
-
-<p style="text-decoration: underline"><b>User Authorization (Sign In, Sign Up)</b></p>
-<p>User can both, sign up and sign in. Users password gets enctypted using BCrypt one-way hashing function. This way, database store a secure password digest instead of a plain password.</p>
-<p>Once logged in, user gets assigned a random session token that is also gets stored in users's browser as a session cookie. Session cookie allow user to be recognized next time he visits a website.</p>
-
-
-```
- after_initialize :ensure_session_token
-
-  def self.find_by_credentials(email, password)
-    user = User.find_by(email: email)
-    return nil unless user
-    user.is_password?(password) ? user : nil
-  end
-
-  def password=(password)
-    @password = password
-    self.password_digest = BCrypt::Password.create(password)
-  end
-
-  def is_password?(password)
-    BCrypt::Password.new(self.password_digest).is_password?(password)
-  end
-
-  def reset_session_token!
-    self.session_token = SecureRandom.urlsafe_base64
-    self.save!
-    self.session_token
-  end
-
-  private
-
-  def ensure_session_token
-     self.session_token ||= SecureRandom.urlsafe_base64
-  end
-  
-  ```
-
 <p style="text-decoration: underline"><b>Google Maps Search</b></p>
 
-<p>The index page show a list of listings based on user's geolocation. The nav bar provides a search field where the user can search by city or country. The Google map will then pan to that location and show nearby available homes with the map view. When the user zooms or pans on the map, new fetch request is evoked, bringing back only the listings within the boundaries of the map.</p>
+<p>The index page shows a list of listings based on user's geolocation. The nav bar provides a search field where the user can search by city or country. The Google map will then pan to that location and show nearby available homes with the map view. When the user zooms or pans on the map, a new fetch request is invoked, bringing back only the listings within the boundaries of the map.</p>
 
 ```
     registerListeners() {
@@ -68,7 +29,7 @@ This application is hosted on Heroku and has photos served from AWS. It also use
 ```
 
 <p style="text-decoration: underline"><b>Bookings</b></p>
-<p>Logged in user can book a listing from a show page. User will need to select dates and a number of guests from booking form. User can see which dates are available at the time of booking. To achieve this, on backend I created a method to get all booked dates for a listing with help of ActiveRecord relation.</p>
+<p>Once logged in, a user can book a listing from its show page. Users need to select dates and a number of guests on the booking form. User can see which dates are available at the time of booking. To achieve this, on backend I created a method to get all booked dates for a listing with help of ActiveRecord relation.</p>
 
 ```
   def book_dates
