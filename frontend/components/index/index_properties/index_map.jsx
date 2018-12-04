@@ -20,9 +20,14 @@ class IndexMap extends React.Component {
     this.registerListeners();
     this.MarkerManager.updateMarkers(this.props.properties);
     
+    
     if (this.props.location.state) {
-      let place = this.props.location.state.place;
-      this.map.setCenter(place.geometry.location);
+      if (this.props.location.state.newPropertyPlace)
+        this.map.setCenter(this.props.location.state.newPropertyPlace)
+      else {
+        let place = this.props.location.state.place;
+        this.map.setCenter(place.geometry.location);
+      }
     }
 
     let defaultBounds = new google.maps.LatLngBounds(

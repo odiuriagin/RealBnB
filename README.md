@@ -15,7 +15,7 @@ This application is hosted on Heroku and has photos served from AWS. It also use
 
 <p>The index page shows a list of listings based on user's geolocation. The nav bar provides a search field where the user can search by city or country. The Google map will then pan to that location and show nearby available homes with the map view. When the user zooms or pans on the map, a new fetch request is invoked, bringing back only the listings within the boundaries of the map.</p>
 
-```
+```javascript
     registerListeners() {
       google.maps.event.addListener(this.map, 'idle', () => {
         const { north, south, east, west } = this.map.getBounds().toJSON();
@@ -31,7 +31,7 @@ This application is hosted on Heroku and has photos served from AWS. It also use
 <p style="text-decoration: underline"><b>Bookings</b></p>
 <p>Once logged in, a user can book a listing from its show page. Users need to select dates and a number of guests on the booking form. User can see which dates are available at the time of booking. To achieve this, on backend I created a method to get all booked dates for a listing with help of ActiveRecord relation.</p>
 
-```
+```ruby
   def book_dates
     result = []
 
@@ -51,7 +51,7 @@ This application is hosted on Heroku and has photos served from AWS. It also use
 
 <p>On frontend, I created a method that checks each date in date picker and return a boolean value indicating if the current date is booked or not.</p>
 
-```
+```javascript
   blockedDays(day) {
     let bookedDates = this.props.property.bookedDates
     for (let i = 0; i < bookedDates.length; i++) {
@@ -70,7 +70,7 @@ This application is hosted on Heroku and has photos served from AWS. It also use
 <p>User can review only booked listings. After listing is booked, user will be sent to "Trips" page, where he can click on "Leave a review". Review form will open along with the listing info(photo, host, average rating and number of reviews) and all the past reviews. When review is submitted, average rating and review count will update instantly.
 <p>When another review is submitted, "reviewTracker" will be updated in ReviewForm component's state. </p>
 
-```
+```javascript
   handleSubmit(e) {
     e.preventDefault();
     const review_info = {
@@ -86,7 +86,7 @@ This application is hosted on Heroku and has photos served from AWS. It also use
 
 <p>This will trigger "componentDidUpdate" lifecycle method that will get updated data from the database.</p>
 
-```
+```javascript
   componentDidUpdate(oldParams, oldState) {
     if (oldState.reviewTracker !== this.state.reviewTracker) {
       this.props.fetchProperty(this.props.match.params.propertyId)

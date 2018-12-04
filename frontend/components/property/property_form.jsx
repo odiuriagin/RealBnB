@@ -1,5 +1,6 @@
 import React from 'react';
 import IndexNavContainer from '../index/index_nav/index_nav_container';
+import { Redirect, withRouter } from 'react-router-dom';
 
 class PropertyForm extends React.Component {
 
@@ -19,7 +20,11 @@ class PropertyForm extends React.Component {
             breakfast: false,
             body: "",
             latitude: null,
-            longitude: null
+            longitude: null,
+            newPropertyLat: 0,
+            newPropertyLng: 0,
+            redirect: false,
+            newPropertyPlace: null,
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCheckbox = this.handleCheckbox.bind(this);
@@ -43,7 +48,9 @@ class PropertyForm extends React.Component {
         let address = `${this.state.address}, ${this.state.city}, ${this.state.state}, ${this.state.zip}`;
         geocoder.geocode({ 'address': address }, (results, status) => {
             this.setState( {latitude: results[0].geometry.location.lng(),
-                            longitude: results[0].geometry.location.lat() });
+                            longitude: results[0].geometry.location.lat(),
+                            newPropertyPlace: results[0].geometry.location,
+                            redirect: true});
             let property_info = {
                 host_id: parseInt(this.props.currentUserId),
                 description: this.state.description,
@@ -67,7 +74,9 @@ class PropertyForm extends React.Component {
 
     render() {
 
-
+        if (this.state.redirect === true) {
+            return <Redirect to={{ pathname: '/index', state: { newPropertyPlace: this.state.newPropertyPlace }}} />
+        } 
 
         return (
             <>
@@ -175,4 +184,4 @@ class PropertyForm extends React.Component {
     }
 };
 
-export default PropertyForm;
+export default withRouter(PropertyForm);
