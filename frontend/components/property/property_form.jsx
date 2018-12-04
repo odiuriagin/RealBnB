@@ -174,7 +174,7 @@ class PropertyForm extends React.Component {
                             <input type="checkbox"  id="breakfast" value={this.state.breakfast} onClick={this.handleCheckbox("breakfast")}/>
                         </div>
                         <p>Please give a breif description of your property:</p>
-                        <textarea cols="111" rows="10" value={this.state.body} onChange={this.handleChange("body")}></textarea>
+                        <textarea className = "property-form-text-area" value={this.state.body} onChange={this.handleChange("body")}></textarea>
                         <button className="property-form-submit" onClick={this.handleSubmit}>Submit your listing</button>
                     </form>
 
