@@ -6,6 +6,7 @@ import PropertyForm from './property_form';
 const mapStateToProps = (state) => {
     return {
         currentUserId: state.session.currentUserId,
+        errors: state.errors.property,
     }
 };
 

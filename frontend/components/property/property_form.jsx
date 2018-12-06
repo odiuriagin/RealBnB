@@ -49,8 +49,7 @@ class PropertyForm extends React.Component {
         geocoder.geocode({ 'address': address }, (results, status) => {
             this.setState( {latitude: results[0].geometry.location.lng(),
                             longitude: results[0].geometry.location.lat(),
-                            newPropertyPlace: results[0].geometry.location,
-                            redirect: true});
+                            newPropertyPlace: results[0].geometry.location});
             let property_info = {
                 host_id: parseInt(this.props.currentUserId),
                 description: this.state.description,
@@ -68,11 +67,15 @@ class PropertyForm extends React.Component {
                 latitude: parseFloat(this.state.latitude),
                 longitude: parseFloat(this.state.longitude),
             }
-            this.props.createProperty(property_info);
+            this.props.createProperty(property_info).then( () => this.setState({ redirect: true }));
         })
     };
 
     render() {
+
+        const errors = this.props.errors.map( (err, i) => {
+            return(<li key={i}><span className="error-logo"><img src={window.error}/></span>{err}</li>)
+          });
 
         if (this.state.redirect === true) {
             return <Redirect to={{ pathname: '/index', state: { newPropertyPlace: this.state.newPropertyPlace }}} />
@@ -175,6 +178,7 @@ class PropertyForm extends React.Component {
                         </div>
                         <p>Please give a breif description of your property:</p>
                         <textarea className = "property-form-text-area" value={this.state.body} onChange={this.handleChange("body")}></textarea>
+                        <ul className="errors">{errors}</ul>
                         <button className="property-form-submit" onClick={this.handleSubmit}>Submit your listing</button>
                     </form>
 
