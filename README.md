@@ -29,7 +29,7 @@ This application is hosted on Heroku and has photos served from AWS. It also use
 ```
 
 <p style="text-decoration: underline"><b>Bookings</b></p>
-<p>Once logged in, a user can book a listing from its show page. Users need to select dates and a number of guests on the booking form. User can see which dates are available at the time of booking. To achieve this, on backend I created a method to get all booked dates for a listing with help of ActiveRecord relation.</p>
+<p>Once logged in, a user can book a listing from its show page. Users need to select dates and a number of guests on the booking form. User can see which dates are available at the time of booking. To achieve this, on backend I created a method to get all booked dates for a listing using ActiveRecord (an ActiveRecord relation is an object that resembles an array that has different methods available on it)</p>
 
 ```ruby
   def book_dates
@@ -63,11 +63,11 @@ This application is hosted on Heroku and has photos served from AWS. It also use
   }
 ```
 
-<p>After property is booked, user will be sent to list of all booked trips. For each trip on "Trips" page will be able to leave a review or cancel a trip</p>
+<p>After a property is booked, the user will be sent to list of all booked trips. For each trip on "Trips" page will be able to leave a review or cancel a trip</p>
 
 
 <p style="text-decoration: underline"><b>User Reviews</b></p>
-<p>User can review only booked listings. After listing is booked, user will be sent to "Trips" page, where he can click on "Leave a review". Review form will open along with the listing info(photo, host, average rating and number of reviews) and all the past reviews. When review is submitted, average rating and review count will update instantly.
+<p>User can review only booked listings. After listing is booked, the user will be sent to "Trips" page, where the user can click on "Leave a review". Review form will open along with the listing info(photo, host, average rating and number of reviews) and all the past reviews. When review is submitted, average rating and review count will update instantly.
 <p>When another review is submitted, "reviewTracker" will be updated in ReviewForm component's state. </p>
 
 ```javascript
