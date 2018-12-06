@@ -28,6 +28,8 @@ class ReviewItem extends React.Component {
 
   render() {
 
+    console.log(this.props);
+
 
     let date = moment(this.props.review.created_at).format('DD-MMM-YYYY');
     let time = moment(this.props.review.created_at).format('h:mm A');

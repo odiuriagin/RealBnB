@@ -17,7 +17,8 @@ class BookForm extends React.Component {
       endDate: null,
       focusedInput: null,
       num_people: 1,
-      fireRedirect: false
+      fireRedirect: false,
+      noDates: false,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handlePeopleInput = this.handlePeopleInput.bind(this);
@@ -45,13 +46,20 @@ class BookForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const booking_info = {
-      property_id: parseInt(this.props.propertyId),
-      check_in: this.state.startDate._d,
-      check_out: this.state.endDate._d,
-      num_people: this.state.num_people,
+    if (!this.state.startDate || !this.state.endDate) {
+      this.setState( {noDates: true} );
+    } else {
+
+      const booking_info = {
+        property_id: parseInt(this.props.propertyId),
+        check_in: this.state.startDate._d,
+        check_out: this.state.endDate._d,
+        num_people: this.state.num_people,
+      }
+      this.props.createBooking(booking_info).then( () => this.setState({ fireRedirect: true }));
+
     }
-    this.props.createBooking(booking_info).then( () => this.setState({ fireRedirect: true }));
+
   }
 
   handlePeopleInput(e) {
@@ -60,7 +68,12 @@ class BookForm extends React.Component {
 
   render() {
 
+    let datesErr;
     const { fireRedirect } = this.state;
+
+    if (this.state.noDates) {
+      datesErr = <p className="book-form-dates-error errors"><span className="error-logo"><img src={window.error}/></span>Dates can't be empty!</p>;
+    }
 
     const errors = this.props.errors.map( (err, i) => {
       return(<li key={i}><span className="error-logo"><img src={window.error}/></span>{err}</li>)
@@ -110,6 +123,7 @@ class BookForm extends React.Component {
             <option value="5">5 guests</option>
             <option value="6">6 guests</option>
           </select>
+          {datesErr}
           <button className="book-form-submit" onClick={this.handleSubmit} >Book</button>
           <p className="no-charge">You won’t be charged yet</p>
         </form>

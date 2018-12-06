@@ -27,8 +27,8 @@ class PropertyInfo extends React.Component {
       const review_array = Object.keys(property.reviews).map(id => property.reviews[id]).reverse();
       reviews = review_array.map(review => {
         return (
-          <div className="property-show-review-item">
-            <ReviewItem key={review.id} review={review}
+          <div key={review.id} className="property-show-review-item">
+            <ReviewItem review={review}
                deleteReview={this.props.deleteReview}
                currentUserId={this.props.currentUserId}
               />

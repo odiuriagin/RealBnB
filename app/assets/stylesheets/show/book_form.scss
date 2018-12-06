@@ -5,7 +5,7 @@
 
 .book-form {
   width: 377px;
-  height: 390px;
+  height: auto;
   float: left;
   margin: 45px auto;
   border: 1px solid lightgray;
@@ -94,6 +94,7 @@ span.book-form-ratings-num {
   font-size: 12px;
   width: 43%;
   margin: 0 auto;
+  margin-bottom: 15px;
   font-weight: 700;
 }
 
@@ -132,4 +133,18 @@ div.DateInput.DateInput_1 {
   width: 303px;
   position: absolute;
   left: -40px;
+}
+
+.book-form-dates-error {
+  line-height: 2.4;
+  font-size: 14px;
+  padding: 10px;
+  border: 2px solid #ebebeb;
+  border-radius: 10px;
+  text-align: center;
+  width: 77%;
+  height: 36px;
+  left: 30px;
+  position: relative;
+  padding-left: 0;
 }
