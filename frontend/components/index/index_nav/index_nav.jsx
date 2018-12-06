@@ -46,7 +46,7 @@ class IndexNav extends React.Component {
           <li>
             <a href="#"><img className="user-photo" src={userLogo}></img></a>
             <ul className="main-nav-dropdown">
-              <li><a href="#">Add Photo</a></li>
+
               <li><a onClick={this.props.logout}>Log Out</a></li>
             </ul>
           </li>
