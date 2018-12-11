@@ -30,7 +30,7 @@ const receivePropertyErrors = (errors) => {
   };
 };
 
-const clearPropertyErrors = () => {
+export const clearPropertyErrors = () => {
   return {
     type: CLEAR_PROPERTY_ERRORS,
   };
@@ -58,12 +58,12 @@ export const createProperty = property => dispatch => (
 
 export const updatePost = property => dispatch => (
   PropertyAPIUtil.updateProperty(property).then(
-    property => dispatch(receiveProperty(property))
+    property => dispatch(receiveProperty(property)),
   )
 );
 
 export const deleteProperty = id => dispatch => (
   PropertyAPIUtil.deleteProperty(id).then(
-    () => dispatch(removeProperty(id))
+    () => dispatch(removeProperty(id)),
   )
 );

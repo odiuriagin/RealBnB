@@ -28,7 +28,6 @@ const removeBooking = (id) => {
 }
 
 const receiveBookingErrors = (errors) => {
-  debugger
   return {
     type: RECEIVE_BOOKING_ERRORS,
     errors,

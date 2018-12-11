@@ -2,24 +2,19 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import MarkerManager from '../../../util/marker_manager';
 
-
-
 const mapOptions = {
   center: { lat: 40.758888, lng: -73.953621 },
   zoom: 12
 };
 
-
 class IndexMap extends React.Component {
 
   componentDidMount() {
 
-    
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
     this.registerListeners();
     this.MarkerManager.updateMarkers(this.props.properties);
-    
     
     if (this.props.location.state) {
       if (this.props.location.state.newPropertyPlace)
@@ -51,7 +46,6 @@ class IndexMap extends React.Component {
         this.map.setCenter(place.geometry.location);
       }
     });
-
     }
 
     componentDidUpdate() {
@@ -67,13 +61,11 @@ class IndexMap extends React.Component {
         };
         this.props.updateFilter('bounds', bounds);
       });
-
     }
 
     handleMarkerClick(property) {
       this.props.history.push(`properties/${property.id}`);
     }
-
 
     render() {
       return (

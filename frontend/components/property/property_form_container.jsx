@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createProperty } from '../../actions/properties_actions';
+import { createProperty, clearPropertyErrors } from '../../actions/properties_actions';
 import PropertyForm from './property_form';
 
 const mapStateToProps = (state) => {
@@ -13,6 +13,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         createProperty: (property) => dispatch(createProperty(property)),
+        clearPropertyErrors: () => dispatch(clearPropertyErrors()),
     }
 };
 
