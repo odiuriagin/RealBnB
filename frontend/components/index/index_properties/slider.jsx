@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class SimpleSlider extends React.Component {
   render() {
     const settings = {

@@ -1,16 +1,11 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 
-
-const Greeting = ({currentUser, logout}) => {
-
-let greeting;
+const Greeting = ({currentUser}) => {
 
 if (currentUser) {
   return (
     <div>
       <h2 className="greeting">Welcome, {currentUser.name}!</h2>
-
     </div>
   );
 } else {

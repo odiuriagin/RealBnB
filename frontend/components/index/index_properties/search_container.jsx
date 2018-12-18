@@ -1,6 +1,4 @@
 import { connect } from 'react-redux';
-import IndexProperties from './index_properties';
-import { fetchProperties } from '../../../actions/properties_actions';
 import { updateFilter } from '../../../actions/filter_actions';
 import Search from './search';
 

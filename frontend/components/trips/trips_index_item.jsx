@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-
 const TripsIndexItem = ({ booking, property, deleteBooking, openModal, history }) => {
 
   const url = property ? property.photoUrls[0] : "#";

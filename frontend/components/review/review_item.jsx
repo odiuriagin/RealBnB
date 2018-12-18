@@ -84,6 +84,4 @@ class ReviewItem extends React.Component {
   }
 }
 
-
-
 export default ReviewItem;

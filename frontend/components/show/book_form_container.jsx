@@ -9,7 +9,7 @@ const mapStateToProps = (state = {}, ownProps) => {
   return {
     property: state.entities.properties[ownProps.propertyId],
     currentUserId: state.session.currentUserId,
-    errors: state.errors.booking
+    errors: state.errors.booking,
   }
 };
 

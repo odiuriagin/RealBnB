@@ -1,6 +1,5 @@
 import React from 'react';
 import IndexPropertiesItem from './index_properties_item';
-import IndexMap from './index_map';
 
 class IndexProperties extends React.Component {
 
@@ -11,10 +10,20 @@ class IndexProperties extends React.Component {
       );
     });
 
+    let homes;
+    if (!this.props.properties.length) {
+      homes = "There are no available";
+    } else {
+      homes = this.props.properties.length;
+    }
+
     return (
-      <div className="index-properties">
-        <ul className="properties-list">{properties}</ul>
-      </div>
+      <>
+        <p className="index-num-homes">{homes} homes</p>
+        <div className="index-properties">
+          <ul className="properties-list">{properties}</ul>
+        </div>
+      </>
     );
   }
 }

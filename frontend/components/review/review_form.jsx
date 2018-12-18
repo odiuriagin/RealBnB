@@ -53,7 +53,6 @@ class ReviewForm extends React.Component {
     this.setState({ body: e.target.value })
   }
 
-
   render() {
 
     const property = this.props.property

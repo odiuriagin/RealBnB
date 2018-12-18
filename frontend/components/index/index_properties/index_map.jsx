@@ -69,12 +69,9 @@ class IndexMap extends React.Component {
 
     render() {
       return (
-        <>
-          <p className="index-num-homes">{this.props.properties.length} homes</p>
-          <div className="index-map-container">
-            <div className="index-map" ref={ map => this.mapNode = map }></div>
-          </div>
-        </>
+        <div className="index-map-container">
+          <div className="index-map" ref={ map => this.mapNode = map }></div>
+        </div>
       )
     }
 }

@@ -12,13 +12,10 @@ export default class MarkerManager {
     properties.forEach(property => propertiesObj[property.id] = property);
 
     properties.filter(property => !this.markers[property.id])
-      .forEach(newProperty => this.createMarkerFromProperty(newProperty, this.handleClick))
+      .forEach(newProperty => this.createMarkerFromProperty(newProperty, this.handleClick));
 
     Object.keys(this.markers).filter(propertyId => !propertiesObj[propertyId])
-      .forEach((propertyId) => this.removeMarker(this.markers[propertyId]))
-
-
-
+      .forEach((propertyId) => this.removeMarker(this.markers[propertyId]));
   }
 
   createMarkerFromProperty(property) {

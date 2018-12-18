@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Ratings from 'react-ratings-declarative';
 
-
 const IndexPropertiesItem = ({ property }) => {
 
   return (

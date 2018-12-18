@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import { createProperty, clearPropertyErrors } from '../../actions/properties_actions';
 import PropertyForm from './property_form';

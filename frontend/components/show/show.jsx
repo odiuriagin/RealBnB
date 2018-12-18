@@ -1,11 +1,6 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-
 import IndexNavContainer from '../index/index_nav/index_nav_container';
 import PropertyInfoContainer from './property_info_container';
-
-
-
 
 const Show = (props) => {
   return (

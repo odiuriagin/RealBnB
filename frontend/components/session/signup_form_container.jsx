@@ -4,7 +4,7 @@ import {signup, clearErrors} from '../../actions/session_actions';
 import SessionForm from './session_form';
 import {openModal, closeModal} from '../../actions/modal_actions.js';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     errors: state.errors.session,
     formType: 'Sign Up'

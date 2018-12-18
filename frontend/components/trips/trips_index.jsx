@@ -9,7 +9,6 @@ class TripsIndex extends React.Component {
     this.props.fetchBookings();
   }
 
-
   render() {
 
     let heading = (this.props.bookings.length > 0) ? "Your trips" : "You do not have any trips";
@@ -29,6 +28,5 @@ class TripsIndex extends React.Component {
     )
   }
 }
-
 
 export default TripsIndex;

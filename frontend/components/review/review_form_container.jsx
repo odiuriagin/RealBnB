@@ -1,10 +1,7 @@
-import React from 'react';
 import { fetchProperty } from '../../actions/properties_actions';
 import { fetchReviews, createReview, deleteReview } from '../../actions/review_actions';
 import { connect } from 'react-redux';
 import ReviewForm from './review_form';
-
-
 
   const mapStateToProps = (state = {}, ownProps) => {
     return {

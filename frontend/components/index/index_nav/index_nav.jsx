@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Redirect, withRouter, Switch } from 'react-router-dom';
 
 class IndexNav extends React.Component {
@@ -29,9 +29,7 @@ class IndexNav extends React.Component {
   }
 
   render() {
-
     let userLogo = this.props.currentUser.userPhotoUrl ? this.props.currentUser.userPhotoUrl : window.user_logo;
-
     if (this.state.redirect === true) {
       return <Redirect to={{ pathname: '/index', state: { place: this.state.place }}} />
     } 
@@ -46,7 +44,6 @@ class IndexNav extends React.Component {
           <li>
             <a href="#"><img className="user-photo" src={userLogo}></img></a>
             <ul className="main-nav-dropdown">
-
               <li><a onClick={this.props.logout}>Log Out</a></li>
             </ul>
           </li>

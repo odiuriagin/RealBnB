@@ -26,9 +26,7 @@ class ShowPageMap extends React.Component {
 
     render() {
       return (
-
         <div className="show-page-map-container" ref={ map => this.mapNode = map }></div> // this ref gives us access to the map dom node
-
       )
     }
 }

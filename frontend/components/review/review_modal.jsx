@@ -1,7 +1,6 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
 import ReviewFormContainer from './review_form_container';
 
 function ReviewModal({modal, closeModal}) {

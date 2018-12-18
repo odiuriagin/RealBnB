@@ -1,4 +1,3 @@
-import React from 'react';
 import TripsIndex from './trips_index';
 import { connect } from 'react-redux';
 import { fetchBookings, deleteBooking } from '../../actions/booking_actions';
