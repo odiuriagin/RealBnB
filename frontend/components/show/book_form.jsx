@@ -69,10 +69,23 @@ class BookForm extends React.Component {
   render() {
 
     let datesErr;
+    let book;
     const { fireRedirect } = this.state;
+
 
     if (this.state.noDates) {
       datesErr = <p className="book-form-dates-error errors"><span className="error-logo"><img src={window.error}/></span>Dates can't be empty!</p>;
+    }
+
+    if (this.props.currentUserId) {
+      book = (
+            <>
+              <button className="book-form-submit" onClick={this.handleSubmit} >Book</button>
+              <p className="no-charge">You won’t be charged yet</p>
+            </>
+            );
+    } else {
+      book = (<p className="no-user-book">Please Log In or Sign Up to make a reservation</p>);
     }
 
     const errors = this.props.errors.map( (err, i) => {
@@ -124,8 +137,8 @@ class BookForm extends React.Component {
             <option value="6">6 guests</option>
           </select>
           {datesErr}
-          <button className="book-form-submit" onClick={this.handleSubmit} >Book</button>
-          <p className="no-charge">You won’t be charged yet</p>
+          { book }
+          
         </form>
         { fireRedirect && <Redirect to="/trips" /> }
       </div>

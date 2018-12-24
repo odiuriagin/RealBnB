@@ -31,6 +31,7 @@ class IndexNav extends React.Component {
   render() {
 
     let navbar;
+    const user = {name: "Demo User", email: "demo@gmail.com", password: "starwars"};
 
     if (this.props.currentUser) {
       let userLogo = this.props.currentUser.userPhotoUrl ? this.props.currentUser.userPhotoUrl : window.user_logo;
@@ -51,6 +52,7 @@ class IndexNav extends React.Component {
         <ul className="main-nav-list">
           <li><a onClick={() => this.props.openModal('signup')}>Sign Up</a></li>
           <li><a onClick={() => this.props.openModal('login')}>Log In</a></li>
+          <li><a onClick={() => this.props.demoLogin(user)}>Demo User</a></li>
         </ul>
       )
     }

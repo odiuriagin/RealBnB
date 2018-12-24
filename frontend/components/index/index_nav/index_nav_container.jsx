@@ -16,6 +16,7 @@ const mapDispatchToProps = (dispatch) => {
     logout: () => dispatch(logout()),
     login: () => dispatch(login()),
     openModal: (form) => dispatch(openModal(form)),
+    demoLogin: (user) => dispatch(login(user))
   };
 };
 
