@@ -46,7 +46,7 @@ class IndexMap extends React.Component {
         this.map.setCenter(place.geometry.location);
       }
     });
-    }
+  }
 
     componentDidUpdate() {
       this.MarkerManager.updateMarkers(this.props.properties);
@@ -59,7 +59,8 @@ class IndexMap extends React.Component {
           northEast: { latitude:north, longitude:east },
           southWest: { latitude: south, longitude: west }
         };
-        this.props.updateFilter('bounds', bounds);
+        this.setState({isLoading: true});
+        this.props.updateFilter('bounds', bounds).then(() => this.setState({isLoading: false}))
       });
     }
 
