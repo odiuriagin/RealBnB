@@ -23,21 +23,18 @@ class IndexNav extends React.Component {
 
     autocomplete.addListener('place_changed', () => {
       let place = autocomplete.getPlace();
-        this.setState({redirect: true, place});
+      this.setState({redirect: true, place});
     });
 
   }
 
   render() {
-    let userLogo = this.props.currentUser.userPhotoUrl ? this.props.currentUser.userPhotoUrl : window.user_logo;
-    if (this.state.redirect === true) {
-      return <Redirect to={{ pathname: '/index', state: { place: this.state.place }}} />
-    } 
 
-    return (
-      <div className="main-nav">
-        <Link to={'/'}><img src={window.logo_red} className="red-logo" /></Link>
-        <input id="nav-search-field" type="text" placeholder='Try "Miami"'></input>
+    let navbar;
+
+    if (this.props.currentUser) {
+      let userLogo = this.props.currentUser.userPhotoUrl ? this.props.currentUser.userPhotoUrl : window.user_logo;
+      navbar = (
         <ul className="main-nav-list">
           <li><Link to={'/new'}>Become a host</Link></li>
           <li><Link to={'/trips'}>Trips</Link></li>
@@ -48,6 +45,25 @@ class IndexNav extends React.Component {
             </ul>
           </li>
         </ul>
+      )
+    } else {
+      navbar = (
+        <ul className="main-nav-list">
+          <li><a onClick={() => this.props.openModal('signup')}>Sign Up</a></li>
+          <li><a onClick={() => this.props.openModal('login')}>Log In</a></li>
+        </ul>
+      )
+    }
+
+    if (this.state.redirect === true) {
+      return <Redirect to={{ pathname: '/index', state: { place: this.state.place }}} />
+    } 
+
+    return (
+      <div className="main-nav">
+        <Link to={'/'}><img src={window.logo_red} className="red-logo" /></Link>
+        <input id="nav-search-field" type="text" placeholder='Try "Miami"'></input>
+        {navbar}
       </div>
     )
   }

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import IndexNav from './index_nav';
-import { logout } from '../../../actions/session_actions';
+import { logout, login } from '../../../actions/session_actions';
+import {openModal} from '../../../actions/modal_actions';
 
 
 const mapStateToProps = (state) => {
@@ -13,6 +14,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     logout: () => dispatch(logout()),
+    login: () => dispatch(login()),
+    openModal: (form) => dispatch(openModal(form)),
   };
 };
 
