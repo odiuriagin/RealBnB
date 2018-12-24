@@ -5,6 +5,42 @@
   background-size: 100%;
 }
 
+.main-content {
+    margin-top: 17%;
+}
+
+.main-search-container {
+    width: 500px;
+    height: 60px;
+    background-color: white;
+    margin: 20px auto;
+    border-radius: 5px;
+    -webkit-box-shadow: -1px 2px 4px 0px rgba(128,123,128,1);
+    -moz-box-shadow: -1px 2px 4px 0px rgba(128,123,128,1);
+    box-shadow: -1px 2px 4px 0px rgba(128,123,128,1);
+}
+
+#main-search {
+    width: 90%;
+    height: 90%;
+    display: block;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 17px;
+    background: image_url('search-logo') top left no-repeat;
+    background-size: 24px;
+    background-position-x: 13px;
+    background-position-y: 18px;
+    padding-left: 47px;
+  }
+
+  .next-trip {
+    margin: 20px auto;
+    width: 500px;
+    color: white;
+    font-size: 22px;
+  }
+
 @media only screen and (max-width: 1570px) {
     .splash-main {
         background-image: image_url('splash_vertical');
