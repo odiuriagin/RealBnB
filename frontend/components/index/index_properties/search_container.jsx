@@ -4,6 +4,7 @@ import Search from './search';
 
 const mapStateToProps = state => ({
   properties: Object.keys(state.entities.properties).map(id => state.entities.properties[id]),
+  loading: state.ui.loading.propertiesLoading,
 });
 
 const mapDispatchToProps = dispatch => ({

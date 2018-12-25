@@ -1,11 +1,11 @@
 import * as PropertyAPIUtil from '../util/property_api_util';
 
-
 export const RECEIVE_ALL_PROPERTIES = 'RECEIVE_ALL_PROPERTIES';
 export const RECEIVE_PROPERTY = 'RECEIVE_PROPERTY';
 export const REMOVE_PROPERTY = 'REMOVE_PROPERTY';
 export const RECEIVE_PROPERTY_ERRORS = 'RECEIVE_PROPERTY_ERRORS';
 export const CLEAR_PROPERTY_ERRORS = 'CLEAR_PROPERTY_ERRORS';
+export const START_LOADING_ALL_PROPERTIES = 'START_LOADING_ALL_PROPERTIES';
 
 
 const receiveAllProperties = properties => ({
@@ -30,17 +30,26 @@ const receivePropertyErrors = (errors) => {
   };
 };
 
+const startLoadingAllProperties = () => {
+  return {
+    type: START_LOADING_ALL_PROPERTIES,
+  };
+};
+
 export const clearPropertyErrors = () => {
   return {
     type: CLEAR_PROPERTY_ERRORS,
   };
 };
 
-export const fetchProperties = (filters) => dispatch => (
-  PropertyAPIUtil.fetchProperties(filters).then(
-    properties => dispatch(receiveAllProperties(properties))
-  )
-);
+export const fetchProperties = (filters) => (dispatch) => {
+  dispatch(startLoadingAllProperties());
+  return PropertyAPIUtil.fetchProperties(filters).then( properties => {
+    dispatch(receiveAllProperties(properties))
+  });
+};
+
+
 
 export const fetchProperty = id => dispatch => (
   PropertyAPIUtil.fetchProperty(id).then(
