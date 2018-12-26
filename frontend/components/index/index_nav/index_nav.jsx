@@ -58,7 +58,11 @@ class IndexNav extends React.Component {
     }
 
     if (this.state.redirect === true) {
-      return <Redirect to={{ pathname: '/index', state: { place: this.state.place }}} />
+      if (this.state.place.geometry) {
+        return <Redirect to={{ pathname: '/index', state: { place: this.state.place }}} />
+      } else {
+        alert("Invalid input!");
+      }
     } 
 
     return (

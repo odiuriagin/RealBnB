@@ -41,6 +41,11 @@
     font-size: 22px;
   }
 
+    .splash-error {
+        font-size: 18px !important;
+        line-height: 2 !important;
+    }
+
 @media only screen and (max-width: 1570px) {
     .splash-main {
         background-image: image_url('splash_vertical');

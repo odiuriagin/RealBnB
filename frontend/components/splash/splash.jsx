@@ -29,9 +29,15 @@ class Splash extends React.Component {
 
   render() {
 
-    if (this.state.redirect === true) {
+    let error = (<div></div>);
+
+  if (this.state.redirect === true) {
+    if (this.state.place.geometry) {
       return <Redirect to={{ pathname: '/index', state: { place: this.state.place }}} />
-    } 
+    } else {
+      error = (<li className="splash-error"><span className="error-logo"><img src={window.error}/></span>Please select a valid city!</li>);
+    }
+  } 
 
     return (
       <div className="splash-main">
@@ -40,6 +46,7 @@ class Splash extends React.Component {
           <p className="next-trip">Plan your next trip</p>
           <div className="main-search-container">
             <input id="main-search" type="text" placeholder='Try "New York"'></input>
+            <ul className="errors">{error}</ul>
           </div>
         </div>
       </div>
