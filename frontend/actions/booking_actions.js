@@ -5,6 +5,7 @@ export const RECEIVE_BOOKING = 'RECEIVE_BOOKING';
 export const RECEIVE_BOOKING_ERRORS = 'RECEIVE_BOOKING_ERRORS';
 export const CLEAR_BOOKING_ERRORS = 'CLEAR_BOOKING_ERRORS';
 export const DELETE_BOOKING = 'DELETE_BOOKING';
+export const START_LOADING_ALL_BOOKINGS = 'START_LOADING_ALL_BOOKINGS';
 
 const receiveBookings = (bookings) => {
   return {
@@ -40,7 +41,14 @@ export const clearBookingErrors = () => {
   }
 }
 
+const startLoadingAllBookings = () => {
+  return {
+    type: START_LOADING_ALL_BOOKINGS
+  };
+};
+
 export const fetchBookings = () => (dispatch) => {
+  dispatch(startLoadingAllBookings());
   return BookingAPIUtil.fetchBookings().then( (bookings) => {
     return dispatch(receiveBookings(bookings));
   });

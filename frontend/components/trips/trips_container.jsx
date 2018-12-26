@@ -6,7 +6,8 @@ import {openModal} from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
   return {
-    bookings: Object.values(state.entities.bookings)
+    bookings: Object.values(state.entities.bookings),
+    loading: state.ui.loading.bookingsLoading,
   }
 };
 
