@@ -28,10 +28,27 @@ class IndexNav extends React.Component {
 
   }
 
+  componentDidUpdate() {
+    if (this.state.redirect && !this.state.place.geometry) {
+      alert("Please enter a valid city!");
+      this.setState({ redirect: false, error: true });
+    }
+  }
+
   render() {
 
     let navbar;
     const user = {name: "Demo User", email: "demo@gmail.com", password: "starwars"};
+    let error = (<div></div>);
+
+    if (this.state.redirect === true) {
+      if (this.state.place.geometry) {
+        return <Redirect to={{ pathname: '/index', state: { place: this.state.place }}} />
+      } 
+    } 
+    // else if (this.state.error && !this.state.redirect) {
+      // error = (<li className="splash-error"><span className="error-logo"><img src={window.error}/></span>Please select a valid city!</li>);
+    // }
 
     if (this.props.currentUser) {
       let userLogo = this.props.currentUser.userPhotoUrl ? this.props.currentUser.userPhotoUrl : window.user_logo;
@@ -57,18 +74,11 @@ class IndexNav extends React.Component {
       )
     }
 
-    if (this.state.redirect === true) {
-      if (this.state.place.geometry) {
-        return <Redirect to={{ pathname: '/index', state: { place: this.state.place }}} />
-      } else {
-        alert("Invalid input!");
-      }
-    } 
-
     return (
-      <div className="main-nav">
+      <div className="main-nav ">
         <Link to={'/'}><img src={window.logo_red} className="red-logo" /></Link>
         <input id="nav-search-field" type="text" placeholder='Try "Miami"'></input>
+        <ul className="errors" id="index-nav-error">{error}</ul>
         {navbar}
       </div>
     )

@@ -29,7 +29,7 @@ class Splash extends React.Component {
 
   render() {
 
-    let error = (<div></div>);
+  let error = (<div></div>);
 
   if (this.state.redirect === true) {
     if (this.state.place.geometry) {
