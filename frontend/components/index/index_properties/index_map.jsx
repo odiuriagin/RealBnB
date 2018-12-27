@@ -9,6 +9,13 @@ const mapOptions = {
 
 class IndexMap extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      place: false,
+    }
+  }
+
   componentDidMount() {
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);
@@ -43,12 +50,17 @@ class IndexMap extends React.Component {
       if (!place.geometry) {
         return;
       } else {
+        this.setState( { place: true } );
         this.map.setCenter(place.geometry.location);
       }
     });
   }
 
     componentDidUpdate() {
+      if (this.props.searchErrors.length > 0 && this.state.place) {
+        this.props.clearSearchErrors();
+        this.setState( {place: false} );
+      }
       this.MarkerManager.updateMarkers(this.props.properties);
     }
 

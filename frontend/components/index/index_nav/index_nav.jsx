@@ -30,7 +30,8 @@ class IndexNav extends React.Component {
 
   componentDidUpdate() {
     if (this.state.redirect && !this.state.place.geometry) {
-      alert("Please enter a valid city!");
+      this.props.receiveSearchErrors();
+      // alert("Please enter a valid city!");
       this.setState({ redirect: false, error: true });
     }
   }
@@ -43,12 +44,13 @@ class IndexNav extends React.Component {
 
     if (this.state.redirect === true) {
       if (this.state.place.geometry) {
+        this.props.clearSearchErrors();
         return <Redirect to={{ pathname: '/index', state: { place: this.state.place }}} />
       } 
     } 
-    // else if (this.state.error && !this.state.redirect) {
-      // error = (<li className="splash-error"><span className="error-logo"><img src={window.error}/></span>Please select a valid city!</li>);
-    // }
+    if (this.props.searchErrors.length > 0) {
+       error = (<li className="splash-error"><span className="error-logo"><img src={window.error}/></span>{this.props.searchErrors[0]}</li>);
+    }
 
     if (this.props.currentUser) {
       let userLogo = this.props.currentUser.userPhotoUrl ? this.props.currentUser.userPhotoUrl : window.user_logo;
